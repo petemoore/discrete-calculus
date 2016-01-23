@@ -1,0 +1,3431 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2. The Discrete Derivative</TITLE>
+<META NAME="description" CONTENT="2. The Discrete Derivative">
+<META NAME="keywords" CONTENT="Project">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Project.css">
+
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="index.html">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+
+<BODY >
+
+
+
+
+<table width="100%" border=0 cellpadding = 50>
+<tr>
+<td>
+
+
+
+
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<HR>
+<table width="100%" border=0>
+<tr>
+<td align=left>
+
+<A NAME="tex2html102"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="index2.gif"></A>
+<A NAME="tex2html94"
+  HREF="node2.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev2.gif"></A>
+<A NAME="tex2html100"
+  HREF="index.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up2.gif"></A>
+<A NAME="tex2html104"
+  HREF="node4.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next2.gif"></A>
+</td>
+<td align=right>
+<a href="mailto:petemoore@worc0260.freeserve.co.uk"><img src="email.gif" border=0 width=56 height=30 alt="email"></a>
+<a href="http://www.worc0260.freeserve.co.uk/petemoore/maths/"><img src="home.gif" border=0 width=26 height=30 alt="home"></a>
+
+</td>
+</tr>
+</table>
+
+<HR>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html106"
+  HREF="#SECTION00310000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Shift Operator</A>
+<UL>
+<LI><A NAME="tex2html107"
+  HREF="#SECTION00311000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Shifting Operator</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html108"
+  HREF="#SECTION00320000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN> The Discrete Derivative</A>
+<UL>
+<LI><A NAME="tex2html109"
+  HREF="#SECTION00321000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Discrete Derivative</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html110"
+  HREF="#SECTION00330000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN> Higher Order Derivatives</A>
+<UL>
+<LI><A NAME="tex2html111"
+  HREF="#SECTION00331000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of Higher Order Derivatives</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html112"
+  HREF="#SECTION00340000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN> Theorems involving the Discrete Derivative</A>
+<LI><A NAME="tex2html113"
+  HREF="#SECTION00350000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">5</SPAN> Some Standard Discrete Derivatives</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00300000000000000000">
+<SPAN CLASS="arabic">2</SPAN>. The Discrete Derivative</A>
+</H1>
+
+<P>
+The Discrete Derivative is fundamental in the theory of Discrete
+Calculus.  But before we introduce it, it helps to first introduce
+the <SPAN  CLASS="textit">Shift Operator</SPAN>.  The Shift Operator is present in the
+definition of the Discrete Derivative, and will play a central
+part in simplifying many proofs involving the Discrete Derivative.
+
+<P>
+
+<H1><A NAME="SECTION00310000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Shift Operator</A>
+</H1>
+
+<P>
+<P>
+<DIV><B>Definition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN></B> (The Shift Operator)  &nbsp;
+Consider a function
+<!-- MATH
+ $f:\mathbb{C}\to\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$ f:\mathbb{C}\to\mathbb{C}$"></SPAN>, and a constant <!-- MATH
+ $\delta\in\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ \delta\in\mathbb{C}$"></SPAN>. Then
+we define the <SPAN  CLASS="textit">Shift Operator <!-- MATH
+ $\mathbf{E}^\delta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.gif"
+ ALT="$ \mathbf{E}^\delta$"></SPAN></SPAN> to act on <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.gif"
+ ALT="$ f(x) $"></SPAN> by
+<!-- MATH
+ \begin{displaymath}
+\mathbf{E}^{\delta} f(x) \:\stackrel{\mathrm{def}}{=}\:f(x+\delta)\quad \footnote[2]{Here I use \( \:\stackrel{\mathrm{def}}{=}\:\)to mean \emph{`equal to by definition'}.}
+\end{displaymath}
+ -->
+<P ALIGN="CENTER" CLASS="mathdisplay"><A NAME="tex2html8"><IMG
+ WIDTH="152" HEIGHT="38" BORDER="0"
+ SRC="img50.gif"
+ ALT="\begin{displaymath}\mathbf{E}^{\delta} f(x) \:\stackrel{\mathrm{def}}{=}\:f(x+\delta)\quad \footnotemark [2]
+\end{displaymath}"></A></P></DIV><P></P>
+
+<P>
+So, in simple terms, all that the <!-- MATH
+ $\mathbf{E}^\delta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.gif"
+ ALT="$ \mathbf{E}^\delta$"></SPAN> operator does
+is offset the input variable of the function that it operates on.
+
+<P>
+
+<H2><A NAME="SECTION00311000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Shifting Operator</A>
+</H2>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN></B> &nbsp;
+<!-- MATH
+ $\mathbf{E}^\delta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.gif"
+ ALT="$ \mathbf{E}^\delta$"></SPAN> satisfies the following
+properties:
+
+<P>
+
+<OL>
+<LI><!-- MATH
+ $\mathbf{E}^\delta\mathbf{E}^\varepsilon =
+\mathbf{E}^\varepsilon\mathbf{E}^\delta = \mathbf{E}^{\delta + \varepsilon}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="149" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ \mathbf{E}^\delta\mathbf{E}^\varepsilon =
+\mathbf{E}^\varepsilon\mathbf{E}^\delta = \mathbf{E}^{\delta + \varepsilon} $"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\mathbf{E}^\delta ( \mathbf{E}^\alpha + \mathbf{E}^\beta ) = \mathbf{E}^\delta
+\mathbf{E}^\alpha + \mathbf{E}^\delta \mathbf{E}^\beta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="205" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.gif"
+ ALT="$ \mathbf{E}^\delta ( \mathbf{E}^\alpha + \mathbf{E}^\beta ) = \mathbf{E}^\delta
+\mathbf{E}^\alpha + \mathbf{E}^\delta \mathbf{E}^\beta $"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\mathbf{E}^\delta \{ \lambda f(x) + \mu g(x) \} = \lambda
+\mathbf{E}^\delta f(x) + \mu \mathbf{E}^\delta g(x)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="279" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.gif"
+ ALT="$ \mathbf{E}^\delta \{ \lambda f(x) + \mu g(x) \} = \lambda
+\mathbf{E}^\delta f(x) + \mu \mathbf{E}^\delta g(x) $"></SPAN> <A NAME="shiftlin"></A></LI>
+<LI><!-- MATH
+ $(\mathbf{E}^\delta)^n = \mathbf{E}^{n\delta} \qquad( n\in\mathbb{N})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="167" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.gif"
+ ALT="$ (\mathbf{E}^\delta)^n = \mathbf{E}^{n\delta} \qquad( n\in\mathbb{N}) $"></SPAN>
+</LI>
+</OL></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+
+All results follow directly from the definition.  For example, for
+property (iii):
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\mathbf{E}^\delta \{ \lambda f(x) + \mu g(x) \} & = & \lambda
+f(x+\delta) + \mu g(x+\delta) \\
+& = & \lambda \mathbf{E}^\delta f(x) + \mu \mathbf{E}^\delta g(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="131" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$\displaystyle \mathbf{E}^\delta \{ \lambda f(x) + \mu g(x) \}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="149" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.gif"
+ ALT="$\displaystyle \lambda
+f(x+\delta) + \mu g(x+\delta)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="134" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.gif"
+ ALT="$\displaystyle \lambda \mathbf{E}^\delta f(x) + \mu \mathbf{E}^\delta g(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P> <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+The following property (Property&nbsp;<A HREF="node3.html#comwithdif">2.2</A>) will simplify
+later proofs.
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN></B> &nbsp;
+If <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ f$"></SPAN> is differentiable, then
+<!-- MATH
+ \begin{displaymath}
+\mathbf{E}^\delta \frac{\mathrm d}{\mathrm d{x}}f(x) = \frac{\mathrm d}{\mathrm d{x}}\mathbf{E}^\delta f(x).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="164" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.gif"
+ ALT="$\displaystyle \mathbf{E}^\delta \frac{\mathrm d}{\mathrm d{x}}f(x) = \frac{\mathrm d}{\mathrm d{x}}\mathbf{E}^\delta f(x). $">
+</DIV><P></P>
+<A NAME="comwithdif"></A></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\mathbf{E}^\delta \frac{\mathrm d}{\mathrm d{x}}f(x) & = & \frac{\mathrm d}{\mathrm d{x}}f(x+\delta) \\
+& = & \frac{\mathrm d}{\mathrm d{x}}\mathbf{E}^\delta f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="72" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.gif"
+ ALT="$\displaystyle \mathbf{E}^\delta \frac{\mathrm d}{\mathrm d{x}}f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="80" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}f(x+\delta)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="72" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}\mathbf{E}^\delta f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P> <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+Now that we have proved all of the necessary properties of the
+Shifting Operator, we can move on and define the Discrete
+Derivative.  We will use the information that we have gathered
+about the Shifting Operator to prove further properties of the
+Discrete Derivative.
+
+<P>
+
+<H1><A NAME="SECTION00320000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN> The Discrete Derivative</A>
+</H1>
+
+<P>
+Certain conditions need to be placed on any function that is to be
+discretely differentiated or integrated.  For the sake of
+simplicity, I will only consider defining the Discrete Derivative
+on <SPAN  CLASS="textit">analytic</SPAN> functions.  This does not mean that it is of
+little worth to consider other types of functions.
+
+<P>
+In the same way that the derivative in <SPAN  CLASS="textit">Continuous</SPAN> Calculus
+can be considered as an operator, so too can the Discrete
+Derivative.
+
+<P>
+Let us remind ourselves how the Continuous Derivative is defined
+on a function <!-- MATH
+ $f:\mathbb{C}\to\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$ f:\mathbb{C}\to\mathbb{C}$"></SPAN>.
+
+<P>
+Consider a function <!-- MATH
+ $f:\mathbb{C}\to\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$ f:\mathbb{C}\to\mathbb{C}$"></SPAN> together with a constant
+<!-- MATH
+ $h\in\mathbb{C},\,h \neq 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="88" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.gif"
+ ALT="$ h\in\mathbb{C},\,h \neq 0 $"></SPAN> . Define <!-- MATH
+ $g:\mathbb{C}^2\to\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.gif"
+ ALT="$ g:\mathbb{C}^2\to\mathbb{C}$"></SPAN> by
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="firstgofx"></A><!-- MATH
+ \begin{eqnarray}
+g(x,h) & = & \frac{f(x+h) - f(x)}{h} \nonumber \\
+& = & \left( \frac{\mathbf{E}^{h} - \mathbf{E}^{0}}{h} \right) f(x).
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.gif"
+ ALT="$\displaystyle g(x,h)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="112" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.gif"
+ ALT="$\displaystyle \frac{f(x+h) - f(x)}{h}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="122" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$\displaystyle \left( \frac{\mathbf{E}^{h} - \mathbf{E}^{0}}{h} \right) f(x).$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+If <!-- MATH
+ $\lim_{h \to 0}g(x,h)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="97" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$ \lim_{h \to 0}g(x,h) $"></SPAN> exists (and is the same for all
+limiting sequences of <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ h$"></SPAN>) then we call it the derivative of
+<SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.gif"
+ ALT="$ f(x) $"></SPAN> with respect to <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ x$"></SPAN> and write
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+\frac{\mathrm d}{\mathrm d{x}}f(x) \:\stackrel{\mathrm{def}}{=}\:\lim_{h\to 0}g(x,h).
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="161" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}f(x) \:\stackrel{\mathrm{def}}{=}\:\lim_{h\to 0}g(x,h).$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+To formulate Discrete Calculus we suspend this last stage of
+taking a limiting value of <SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.gif"
+ ALT="$ g(x,h)$"></SPAN>.  Instead we leave <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ h$"></SPAN> as
+an additional variable in the system.  Consider defining the
+Discrete Derivative of <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.gif"
+ ALT="$ f(x) $"></SPAN> as <SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.gif"
+ ALT="$ g(x,h)$"></SPAN>.
+
+<P>
+We shall see that defining <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ g$"></SPAN> by
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="secondgofx"></A><!-- MATH
+ \begin{eqnarray}
+g(x,h) & = & \frac{f(x) - f(x-h)}{h} \nonumber \\
+& = & \left( \frac{\mathbf{E}^{0} - \mathbf{E}^{-h}}{h} \right)f(x)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.gif"
+ ALT="$\displaystyle g(x,h)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="112" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.gif"
+ ALT="$\displaystyle \frac{f(x) - f(x-h)}{h}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="127" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.gif"
+ ALT="$\displaystyle \left( \frac{\mathbf{E}^{0} - \mathbf{E}^{-h}}{h} \right)f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+gives us exactly the same <SPAN  CLASS="textit">continuous</SPAN> derivative when the
+limit of <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.gif"
+ ALT="$ h\to0$"></SPAN> is taken.
+
+<P>
+In fact it is generally true, as we shall see later, that the
+<SPAN  CLASS="textit">continuous</SPAN> derivative is unaffected if we define <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ g$"></SPAN> as
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+g(x,r,h) & = & \left(\frac{\mathbf{E}^{h-rh}-\mathbf{E}^{-rh}}{h}
+\right)f(x)
+\nonumber \\
+& = & \left(\frac{\mathbf{E}^{(1-r)h}-\mathbf{E}^{-rh}}{h} \right)f(x)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="61" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.gif"
+ ALT="$\displaystyle g(x,r,h)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="156" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.gif"
+ ALT="$\displaystyle \left(\frac{\mathbf{E}^{h-rh}-\mathbf{E}^{-rh}}{h}
+\right)f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="164" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.gif"
+ ALT="$\displaystyle \left(\frac{\mathbf{E}^{(1-r)h}-\mathbf{E}^{-rh}}{h} \right)f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+for any <!-- MATH
+ $r\in\mathbb{R}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.gif"
+ ALT="$ r\in\mathbb{R}$"></SPAN>.
+
+<P>
+So, for example, (<A HREF="node3.html#firstgofx">2.1</A>) is achieved by letting <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img80.gif"
+ ALT="$ r=0$"></SPAN>
+and (<A HREF="node3.html#secondgofx">2.3</A>) is achieved by letting <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img81.gif"
+ ALT="$ r=1$"></SPAN>.
+
+<P>
+Using this more general definition, we have a whole family of
+Discrete Derivatives of <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.gif"
+ ALT="$ f(x) $"></SPAN> for all possible combinations of
+values for <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img82.gif"
+ ALT="$ r$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ h$"></SPAN>.  And as required, when a limiting
+value of <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.gif"
+ ALT="$ h\to0$"></SPAN> is taken, <SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.gif"
+ ALT="$ g(x,r,h)$"></SPAN> is equal to the
+continuous derivative at <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ x$"></SPAN>.
+
+<P>
+There is one final adjustment to make.  It makes sense to try to
+remove any bias that might exist in the offset.  When <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img80.gif"
+ ALT="$ r=0$"></SPAN> we
+see that we are taking a right-sided derivative, and when <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img81.gif"
+ ALT="$ r=1$"></SPAN>
+we have a left-sided derivative.  By using <!-- MATH
+ $u=r-{\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.gif"
+ ALT="$ u=r-{\scriptstyle \frac{1}{2}}$"></SPAN> instead
+of <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img82.gif"
+ ALT="$ r$"></SPAN> we will now have an unbiased variable <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ u$"></SPAN> which when
+equal to 0 corresponds to a `centered' derivative. Additionally,
+when <!-- MATH
+ $u=-{\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u=-{\scriptstyle \frac{1}{2}}$"></SPAN> and <!-- MATH
+ $u={\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ u={\scriptstyle \frac{1}{2}}$"></SPAN> the corresponding derivative is
+`right-sided' and `left-sided' respectively.
+
+<P>
+<P>
+<DIV><B>Definition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN></B> (The Discrete Derivative)  &nbsp;
+Consider an analytic
+function&nbsp;<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ f$"></SPAN>, and two constants <!-- MATH
+ $u,h\in\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.gif"
+ ALT="$ u,h\in\mathbb{C}$"></SPAN>.  Then we
+define the <SPAN  CLASS="textit">Discrete Derivative of <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.gif"
+ ALT="$ f(x) $"></SPAN></SPAN> by
+
+<P>
+
+<OL>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.gif"
+ ALT="$ h\neq0 $"></SPAN>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) \:\stackrel{\mathrm{def}}{=}\:\frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="293" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) \:\stackrel{\mathrm{d...
+...c{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x) $">
+</DIV><P></P>
+
+<P>
+</LI>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.gif"
+ ALT="$ h=0 $"></SPAN>.  If it exists,
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{0}{x}} f(x) \:\stackrel{\mathrm{def}}{=}\:\lim_{h\to0}\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="179" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img89.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{0}{x}} f(x) \:\stackrel{\mathrm{def}}{=}\:\lim_{h\to0}\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) $">
+</DIV><P></P>
+
+<P>
+</LI>
+</OL></DIV><P></P>
+
+<P>
+There are some very important things to notice from the above
+definition:
+
+<OL>
+<LI>The Discrete Derivative of a function of one variable becomes a
+function of three variables <SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.gif"
+ ALT="$ (x, u, h) $"></SPAN>.
+</LI>
+<LI>For a given function <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ f$"></SPAN>, the Discrete Derivative can
+easily be formulated.  This is the same as in Continuous Calculus.
+We will later see that this is not generally the case for Discrete
+Integrals.
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION00321000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Discrete Derivative</A>
+</H2>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN></B> &nbsp;
+Discrete derivatives extend the traditional
+concept of a derivative -- if a discrete derivative exists, then
+the `continuous' derivative is equal to the discrete derivative
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.gif"
+ ALT="$ h=0 $"></SPAN>. <A NAME="disczero"></A></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+
+Consider an analytic function <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ f$"></SPAN> and a two constants <!-- MATH
+ $u,
+h\in\mathbb{C}, h\neq0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="101" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.gif"
+ ALT="$ u,
+h\in\mathbb{C}, h\neq0$"></SPAN>. Then
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) = \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="285" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) = \frac{1}{h}\left(\m...
+...c{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x).$">
+</DIV><P></P>
+
+<P>
+Since <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ f$"></SPAN> is analytic, we can expand <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.gif"
+ ALT="$ f(x) $"></SPAN> using a
+<SPAN  CLASS="textit">Taylor Expansion</SPAN>. i.e. <!-- MATH
+ $\exists R\in\mathbb{R}, R>0 \text{
+such that } \forall |h|<R,$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="99" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \exists R\in\mathbb{R}, R&gt;0$">&nbsp; &nbsp;
+such that <IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.gif"
+ ALT="$ \forall \vert h\vert&lt;R,$"></SPAN>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+f(x-uh+{\scriptstyle \frac{1}{2}}h) & = & f(x-uh-{\scriptstyle \frac{1}{2}}h) + hf'(x-uh-{\scriptstyle \frac{1}{2}}h) \\
+& & + \frac{h^2}{2!}f''(x-uh-{\scriptstyle \frac{1}{2}}h) + \ldots
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="105" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.gif"
+ ALT="$\displaystyle f(x-uh+{\scriptstyle \frac{1}{2}}h)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="236" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$\displaystyle f(x-uh-{\scriptstyle \frac{1}{2}}h) + hf'(x-uh-{\scriptstyle \frac{1}{2}}h)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="179" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.gif"
+ ALT="$\displaystyle + \frac{h^2}{2!}f''(x-uh-{\scriptstyle \frac{1}{2}}h) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Rearranging gives:
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\lefteqn{\frac{f(x-uh+{\scriptstyle \frac{1}{2}}h) - f(x-uh-{\scriptstyle \frac{1}{2}}h)}{h} \qquad =} \\
+& & f'(x-uh-{\scriptstyle \frac{1}{2}}h) + \frac{h}{2!}f''(x-uh-{\scriptstyle \frac{1}{2}}h) +
+\frac{h^2}{3!}f'''(x-uh-{\scriptstyle \frac{1}{2}}h) + \ldots
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="LEFT" COLSPAN="3"><IMG
+ WIDTH="273" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.gif"
+ ALT="$\displaystyle {\frac{f(x-uh+{\scriptstyle \frac{1}{2}}h) - f(x-uh-{\scriptstyle \frac{1}{2}}h)}{h} \qquad =}$"></TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="435" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.gif"
+ ALT="$\displaystyle f'(x-uh-{\scriptstyle \frac{1}{2}}h) + \frac{h}{2!}f''(x-uh-{\scr...
+... \frac{1}{2}}h) +
+\frac{h^2}{3!}f'''(x-uh-{\scriptstyle \frac{1}{2}}h) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Giving
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{u}^{0}{x}} f(x) & = & \lim_{h\rightarrow0} \Big\{ \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) \Big\} \\
+& = & \lim_{h\rightarrow0} \Big\{ \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x) \Big\} \\
+& = & \lim_{h\rightarrow0} \Big\{ \frac{f(x-uh+{\scriptstyle \frac{1}{2}}h) - f(x-uh-{\scriptstyle \frac{1}{2}}h)}{h} \Big\} \\
+& = & \lim_{h\rightarrow0} \Big\{ f'(x-uh-{\scriptstyle \frac{1}{2}}h) + \frac{h}{2!}f''(x-uh-{\scriptstyle \frac{1}{2}}h) \\
+& & \qquad \quad + \frac{h^2}{3!}f'''(x-uh-{\scriptstyle \frac{1}{2}}h) + \ldots \Big\} \\
+& = & f'(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="62" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{0}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="110" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$\displaystyle \lim_{h\rightarrow0} \Big\{ \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) \Big\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="251" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.gif"
+ ALT="$\displaystyle \lim_{h\rightarrow0} \Big\{ \frac{1}{h}\left(\mathbf{E}^{({\scrip...
+...}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x) \Big\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="274" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.gif"
+ ALT="$\displaystyle \lim_{h\rightarrow0} \Big\{ \frac{f(x-uh+{\scriptstyle \frac{1}{2}}h) - f(x-uh-{\scriptstyle \frac{1}{2}}h)}{h} \Big\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="288" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$\displaystyle \lim_{h\rightarrow0} \Big\{ f'(x-uh-{\scriptstyle \frac{1}{2}}h) + \frac{h}{2!}f''(x-uh-{\scriptstyle \frac{1}{2}}h)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="240" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.gif"
+ ALT="$\displaystyle \qquad \quad + \frac{h^2}{3!}f'''(x-uh-{\scriptstyle \frac{1}{2}}h) + \ldots \Big\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$\displaystyle f'(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+ <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) = \mathbf{E}^{-uh} \frac{\mathrm d}{\mathrm d_{0}^{h}{x}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="175" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) = \mathbf{E}^{-uh} \frac{\mathrm d}{\mathrm d_{0}^{h}{x}} f(x) $">
+</DIV><P></P>
+<A NAME="dd0prop"></A></DIV><P></P>
+
+<P>
+This proposition tells us that so long as we know what the
+Discrete Derivative is when <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ u=0$"></SPAN>, we can calculate the Discrete
+Derivative for all other values of <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ u$"></SPAN>. For example, with this
+freedom in mind, tables of derivatives only need to include the
+case <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ u=0$"></SPAN>.
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+ Case <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.gif"
+ ALT="$ h=0 $"></SPAN> is trivial since the Discrete
+Derivative is the same for all values for <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ u$"></SPAN>.
+
+<P>
+For <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.gif"
+ ALT="$ h\neq0 $"></SPAN>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) & = & \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x) \\
+& = & \mathbf{E}^{-uh} \frac{1}{h}\left(\mathbf{E}^{{\scriptstyle \frac{1}{2}}h} -
+\mathbf{E}^{-{\scriptstyle \frac{1}{2}}h}\right) f(x) \\
+& = & \mathbf{E}^{-uh} \frac{\mathrm d}{\mathrm d_{0}^{h}{x}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="62" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="204" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.gif"
+ ALT="$\displaystyle \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="188" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img110.gif"
+ ALT="$\displaystyle \mathbf{E}^{-uh} \frac{1}{h}\left(\mathbf{E}^{{\scriptstyle \frac{1}{2}}h} -
+\mathbf{E}^{-{\scriptstyle \frac{1}{2}}h}\right) f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="98" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img111.gif"
+ ALT="$\displaystyle \mathbf{E}^{-uh} \frac{\mathrm d}{\mathrm d_{0}^{h}{x}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P> <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">5</SPAN></B> (Linearity of the Discrete Derivative)  &nbsp;
+Consider
+an analytic function <!-- MATH
+ $f:\mathbb{C}\to\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$ f:\mathbb{C}\to\mathbb{C}$"></SPAN>. Then
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big[\lambda f(x) + \mu g(x)\Big] = \lambda \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) + \mu
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} g(x).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="314" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big[\lambda f(x) + \mu g(...
+...{\mathrm d_{u}^{h}{x}} f(x) + \mu
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} g(x). $">
+</DIV><P></P>
+
+<P>
+<A NAME="ddlinear"></A>
+<P>
+</DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+ There are two cases to consider:
+
+<OL>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.gif"
+ ALT="$ h\neq0 $"></SPAN>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big[\lambda f(x) + \mu g(x)\Big] & = & \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right)
+\Big[\lambda f(x)
++ \mu g(x)\Big] \\
+& = & \lambda \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x) \\
+& & + \mu \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) g(x) \\
+& = & \lambda \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) + \mu \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} g(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="140" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big[\lambda f(x) + \mu g(x)\Big]$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="282" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.gif"
+ ALT="$\displaystyle \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+-...
+...^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right)
+\Big[\lambda f(x)
++ \mu g(x)\Big]$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="212" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.gif"
+ ALT="$\displaystyle \lambda \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="223" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.gif"
+ ALT="$\displaystyle + \mu \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) g(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="154" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img117.gif"
+ ALT="$\displaystyle \lambda \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) + \mu \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} g(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+</LI>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.gif"
+ ALT="$ h=0 $"></SPAN>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big[\lambda f(x) + \mu g(x)\Big] & = & \frac{\mathrm d}{\mathrm d{x}}\Big[\lambda
+f(x) + \mu g(x)\Big] \\
+& = & \lambda \frac{\mathrm d}{\mathrm d{x}}f(x) + \mu \frac{\mathrm d}{\mathrm d{x}}g(x) \\
+& = & \lambda \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) + \mu \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} g(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="140" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big[\lambda f(x) + \mu g(x)\Big]$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="133" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}\Big[\lambda
+f(x) + \mu g(x)\Big]$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="139" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img119.gif"
+ ALT="$\displaystyle \lambda \frac{\mathrm d}{\mathrm d{x}}f(x) + \mu \frac{\mathrm d}{\mathrm d{x}}g(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="154" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img117.gif"
+ ALT="$\displaystyle \lambda \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) + \mu \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} g(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+</LI>
+</OL> <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">6</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) = \frac{\mathrm d}{\mathrm d_{-u}^{-h}{x}}f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="149" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) = \frac{\mathrm d}{\mathrm d_{-u}^{-h}{x}}f(x) $">
+</DIV><P></P>
+<A NAME="ddinv"></A></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+
+Consider an analytic function <!-- MATH
+ $f:\mathbb{C}\to\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$ f:\mathbb{C}\to\mathbb{C}$"></SPAN>. There are two
+cases to consider:
+
+<OL>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.gif"
+ ALT="$ h\neq0 $"></SPAN>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{-u}^{-h}{x}}f(x) & = & \frac{1}{-h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-(-u))(-h)}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-(-u))(-h)} \right)f(x) \\
+& = & \frac{1}{-h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}+u)(-h)}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}+u)(-h)} \right)f(x) \\
+& = & \frac{1}{-h}\left(\mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-u)h}
+- \mathbf{E}^{({\scriptstyle \frac{1}{2}}-u)h} \right)f(x) \\
+& = & \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x) \\
+& = & \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="72" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{-u}^{-h}{x}}f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="290" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.gif"
+ ALT="$\displaystyle \frac{1}{-h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-(-u))(-h)}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-(-u))(-h)} \right)f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="252" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.gif"
+ ALT="$\displaystyle \frac{1}{-h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}+u)(-h)}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}+u)(-h)} \right)f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="215" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.gif"
+ ALT="$\displaystyle \frac{1}{-h}\left(\mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-u)h}
+- \mathbf{E}^{({\scriptstyle \frac{1}{2}}-u)h} \right)f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="204" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.gif"
+ ALT="$\displaystyle \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="62" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+</LI>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.gif"
+ ALT="$ h=0 $"></SPAN>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{-u}^{0}{x}} f(x) & = & \frac{\mathrm d}{\mathrm d{x}}f(x) \\
+& = & \frac{\mathrm d}{\mathrm d_{u}^{0}{x}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="72" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{-u}^{0}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="55" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="62" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{0}{x}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+</LI>
+</OL> <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">7</SPAN></B> &nbsp;
+Discrete Derivatives commute with each other.
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} f(x) = \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="195" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d}{\mathrm d...
+...c{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) $">
+</DIV><P></P>
+<A NAME="ddcomm"></A></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+
+We can say without loss of generalization that there are three
+cases to consider:
+
+<OL>
+<LI><!-- MATH
+ $h \neq 0, j \neq 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$ h \neq 0, j \neq 0 $"></SPAN>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} f(x) & = & \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) \frac{1}{j}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{v})j}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{v})j} \right) f(x) \\
+& = & \frac{1}{j}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{v})j}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{v})j} \right) \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x) \\
+& = & \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="90" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="368" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.gif"
+ ALT="$\displaystyle \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+-...
+...ac{1}{2}}-{v})j}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{v})j} \right) f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="368" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.gif"
+ ALT="$\displaystyle \frac{1}{j}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{v})j}
+-...
+...ac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="90" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+<LI><!-- MATH
+ $h \neq 0, j = 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.gif"
+ ALT="$ h \neq 0, j = 0 $"></SPAN>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} f(x) & = & \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d}{\mathrm d{x}}f(x) \\
+& = & \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) \frac{\mathrm d}{\mathrm d{x}}f(x) \\
+& = & \frac{\mathrm d}{\mathrm d{x}}\left\{ \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x) \right\} \\
+& = & \frac{\mathrm d}{\mathrm d{x}}\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) \\
+& = & \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="90" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="83" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d}{\mathrm d{x}}f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="224" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.gif"
+ ALT="$\displaystyle \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+-...
+...{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) \frac{\mathrm d}{\mathrm d{x}}f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="249" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}\left\{ \frac{1}{h}\left(\mathbf{E}...
+...-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x) \right\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="83" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="90" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+<LI><!-- MATH
+ $h = 0, j = 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.gif"
+ ALT="$ h = 0, j = 0 $"></SPAN>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{u}^{0}{x}} \frac{\mathrm d}{\mathrm d_{v}^{0}{x}} f(x) & = & \frac{\mathrm d}{\mathrm d{x}}\frac{\mathrm d}{\mathrm d{x}}f(x) \\
+& = & \frac{\mathrm d}{\mathrm d_{v}^{0}{x}} \frac{\mathrm d}{\mathrm d_{u}^{0}{x}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="90" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{0}{x}} \frac{\mathrm d}{\mathrm d_{v}^{0}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="75" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}\frac{\mathrm d}{\mathrm d{x}}f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="90" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{v}^{0}{x}} \frac{\mathrm d}{\mathrm d_{u}^{0}{x}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+</OL> <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">8</SPAN></B> &nbsp;
+The Centered (i.e. <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ u=0$"></SPAN>) Discrete Derivative of an odd function
+is an even function, and vice versa. <A NAME="oddevenprop"></A></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+
+Follows directly from definition.
+ <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+
+<H1><A NAME="SECTION00330000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN> Higher Order Derivatives</A>
+</H1>
+
+<P>
+Just as in Continuous Calculus, it is of interest to study higher
+order derivatives.  By this I mean functions which are produced
+from the repeated act of some differential operator.
+
+<P>
+<P>
+<DIV><B>Definition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN></B> (Higher Order Derivatives)  &nbsp;
+We define higher order derivatives
+inductively.
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d^{1}}{\mathrm d_{u}^{h}{x}^{1}} f(x) & \:\stackrel{\mathrm{def}}{=}\:& \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) \\
+\text{and \quad} \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} f(x) & \:\stackrel{\mathrm{def}}{=}\:& \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \left(
+\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \right) \text{\quad} \forall i\in\mathbb{N}
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="69" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{1}}{\mathrm d_{u}^{h}{x}^{1}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="28" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.gif"
+ ALT="$\displaystyle \:\stackrel{\mathrm{def}}{=}\:$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="62" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">and &nbsp;&nbsp;&nbsp;&nbsp;<IMG
+ WIDTH="82" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="28" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.gif"
+ ALT="$\displaystyle \:\stackrel{\mathrm{def}}{=}\:$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="91" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img145.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \left(
+\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \right)$">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.gif"
+ ALT="$\displaystyle \forall i\in\mathbb{N}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<A NAME="defhighdd"></A></DIV><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00331000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of Higher Order Derivatives</A>
+</H2>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">9</SPAN></B> (Linearity of Higher Order Discrete
+Derivatives)  &nbsp;
+Consider two analytic functions
+<!-- MATH
+ $f,g:\mathbb{C}\to\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.gif"
+ ALT="$ f,g:\mathbb{C}\to\mathbb{C}$"></SPAN>, <!-- MATH
+ $\lambda, \mu \in \mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.gif"
+ ALT="$ \lambda, \mu \in \mathbb{C}$"></SPAN>. Then
+<!-- MATH
+ $\forall i\in\mathbb{N}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.gif"
+ ALT="$ \forall i\in\mathbb{N}$"></SPAN>
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \Big\{\lambda f(x)+\mu g(x)\Big\} = \lambda \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}}
+f(x) + \mu \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} g(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="330" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \Big\{\lambda f(x)...
+...{u}^{h}{x}^{i}}
+f(x) + \mu \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} g(x) $">
+</DIV><P></P>
+
+<P>
+</DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+ By induction on <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Let <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.gif"
+ ALT="$ p(i)$"></SPAN> be the statement above about <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Certainly <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.gif"
+ ALT="$ p(1)$"></SPAN> holds by Proposition&nbsp;<A HREF="node3.html#ddlinear">2.5</A>.
+
+<P>
+By hypothesis,
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \Big\{\lambda f(x)+\mu g(x)\Big\} = \lambda \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}}
+f(x) + \mu \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} g(x),
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="335" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \Big\{\lambda f(x)...
+...u}^{h}{x}^{i}}
+f(x) + \mu \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} g(x), $">
+</DIV><P></P>
+
+<P>
+and so
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \Big\{\lambda f(x)+\mu g(x)\Big\} \Big\}
+= \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \lambda \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) + \mu \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} g(x) \Big\}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="427" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img155.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d^{i}...
+...{x}^{i}} f(x) + \mu \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} g(x) \Big\}
+$">
+</DIV><P></P>
+
+<P>
+giving
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} \Big\{\lambda f(x)+\mu g(x)\Big\} = \lambda
+\frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} f(x) + \mu \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} g(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="376" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} \Big\{\lambda ...
+...}{x}^{i+1}} f(x) + \mu \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} g(x) $">
+</DIV><P></P>
+
+<P>
+which completes the induction.
+ <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">10</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} = \frac{1}{h^i} \sum_{j=0}^{i}(-1)^j{i \choose j}
+\mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="247" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} = \frac{1}{h^i} \sum_{j=0}^{i}(-1)^j{i \choose j}
+\mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h} $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+ By induction on <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Let <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.gif"
+ ALT="$ p(i)$"></SPAN> be the statement above about <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Certainly <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.gif"
+ ALT="$ p(1)$"></SPAN> holds by Definition&nbsp;<A HREF="node3.html#defhighdd">2.3</A>.
+
+<P>
+By hypothesis,
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} = \frac{1}{h^i} \sum_{j=0}^{i}(-1)^j{i \choose j}
+\mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h},
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="252" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} = \frac{1}{h^i} \s...
+...j=0}^{i}(-1)^j{i \choose j}
+\mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h}, $">
+</DIV><P></P>
+
+<P>
+and so
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} & = & \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{1}{h^i} \sum_{j=0}^{i}(-1)^j{i
+\choose j} \mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h} \\
+& = & \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) \frac{1}{h^i} \sum_{j=0}^{i}(-1)^j{i \choose j}
+\mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h} \\
+& = & \frac{1}{h^{i+1}} \bigg\{ \Big( \sum_{j=0}^i (-1)^j {i
+\choose j} \mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h + ({\scriptstyle \frac{1}{2}}-u)h} \Big) \\
+& & - \Big( \sum_{j=0}^i (-1)^j {i \choose j}
+\mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h + (-{\scriptstyle \frac{1}{2}}-u)h} \Big) \bigg\} \\
+& = & \frac{1}{h^{i+1}} \bigg\{ \Big( \sum_{j=0}^i (-1)^j {i
+\choose j} \mathbf{E}^{-jh + (i+1)({\scriptstyle \frac{1}{2}}-u)h} \Big) \\
+& & - \Big( \sum_{j=1}^{i+1} (-1)^{j-1} {i \choose j-1}
+\mathbf{E}^{-jh + (i+1)({\scriptstyle \frac{1}{2}}-u)h} \Big) \bigg\} \\
+& = & \frac{1}{h^{i+1}} \bigg\{ \mathbf{E}^{(i+1)({\scriptstyle \frac{1}{2}}-u)h} +
+(-1)^{i+1} \mathbf{E}^{(i+1)(-{\scriptstyle \frac{1}{2}}-u)h} \\
+& & + \Big( \sum_{j=1}^i (-1)^j \left\{ {i \choose j} + {i \choose
+j-1} \right\} \mathbf{E}^{((i+1)({\scriptstyle \frac{1}{2}}-u)-j)h} \Big) \bigg\} \\
+& = & \frac{1}{h^{i+1}} \bigg\{ \mathbf{E}^{(i+1)({\scriptstyle \frac{1}{2}}-u)h} +
+(-1)^{i+1} \mathbf{E}^{(i+1)(-{\scriptstyle \frac{1}{2}}-u)h} \\
+& & + \Big( \sum_{j=1}^i (-1)^j {i+1 \choose j}
+\mathbf{E}^{((i+1)({\scriptstyle \frac{1}{2}}-u)-j)h} \Big) \bigg\}
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="67" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="223" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{1}{h^i} \sum_{j=0}^{i}(-1)^j{i
+\choose j} \mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="364" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$\displaystyle \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+-...
+..._{j=0}^{i}(-1)^j{i \choose j}
+\mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="289" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.gif"
+ ALT="$\displaystyle \frac{1}{h^{i+1}} \bigg\{ \Big( \sum_{j=0}^i (-1)^j {i
+\choose j}...
+...^{(i({\scriptstyle \frac{1}{2}}-u)-j)h + ({\scriptstyle \frac{1}{2}}-u)h} \Big)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="278" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.gif"
+ ALT="$\displaystyle - \Big( \sum_{j=0}^i (-1)^j {i \choose j}
+\mathbf{E}^{(i({\scriptstyle \frac{1}{2}}-u)-j)h + (-{\scriptstyle \frac{1}{2}}-u)h} \Big) \bigg\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="270" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.gif"
+ ALT="$\displaystyle \frac{1}{h^{i+1}} \bigg\{ \Big( \sum_{j=0}^i (-1)^j {i
+\choose j} \mathbf{E}^{-jh + (i+1)({\scriptstyle \frac{1}{2}}-u)h} \Big)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="290" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.gif"
+ ALT="$\displaystyle - \Big( \sum_{j=1}^{i+1} (-1)^{j-1} {i \choose j-1}
+\mathbf{E}^{-jh + (i+1)({\scriptstyle \frac{1}{2}}-u)h} \Big) \bigg\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="291" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img166.gif"
+ ALT="$\displaystyle \frac{1}{h^{i+1}} \bigg\{ \mathbf{E}^{(i+1)({\scriptstyle \frac{1}{2}}-u)h} +
+(-1)^{i+1} \mathbf{E}^{(i+1)(-{\scriptstyle \frac{1}{2}}-u)h}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="343" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.gif"
+ ALT="$\displaystyle + \Big( \sum_{j=1}^i (-1)^j \left\{ {i \choose j} + {i \choose
+j-1} \right\} \mathbf{E}^{((i+1)({\scriptstyle \frac{1}{2}}-u)-j)h} \Big) \bigg\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="291" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img166.gif"
+ ALT="$\displaystyle \frac{1}{h^{i+1}} \bigg\{ \mathbf{E}^{(i+1)({\scriptstyle \frac{1}{2}}-u)h} +
+(-1)^{i+1} \mathbf{E}^{(i+1)(-{\scriptstyle \frac{1}{2}}-u)h}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="266" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img168.gif"
+ ALT="$\displaystyle + \Big( \sum_{j=1}^i (-1)^j {i+1 \choose j}
+\mathbf{E}^{((i+1)({\scriptstyle \frac{1}{2}}-u)-j)h} \Big) \bigg\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+giving
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} = \frac{1}{h^{i+1}} \sum_{j=0}^{i+1}(-1)^j{i+1 \choose j}
+\mathbf{E}^{((i+1)({\scriptstyle \frac{1}{2}}-u)-j)h}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="326" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} = \frac{1}{h^{...
+...+1}(-1)^j{i+1 \choose j}
+\mathbf{E}^{((i+1)({\scriptstyle \frac{1}{2}}-u)-j)h} $">
+</DIV><P></P>
+
+<P>
+which completes the induction.
+ <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">11</SPAN></B> &nbsp;
+Discrete Higher Order Derivatives logically
+extend Continuous Higher Order Derivatives, when they exist.
+Consider an analytic function <!-- MATH
+ $f:\mathbb{C}\to\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$ f:\mathbb{C}\to\mathbb{C}$"></SPAN>.  Then
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\forall i\in\mathbb{N},\quad\frac{\mathrm d^{i}}{\mathrm d_{u}^{0}{x}^{i}} f(x) = \frac{\mathrm d^{i}}{\mathrm d x^{i}} f(x).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="210" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.gif"
+ ALT="$\displaystyle \forall i\in\mathbb{N},\quad\frac{\mathrm d^{i}}{\mathrm d_{u}^{0}{x}^{i}} f(x) = \frac{\mathrm d^{i}}{\mathrm d x^{i}} f(x). $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+ By induction on <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Let <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.gif"
+ ALT="$ p(i)$"></SPAN> be the statement above about <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Certainly <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.gif"
+ ALT="$ p(1)$"></SPAN> holds by Proposition&nbsp;<A HREF="node3.html#disczero">2.3</A>.
+
+<P>
+By hypothesis,
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i}}{\mathrm d_{u}^{0}{x}^{i}} f(x) = \frac{\mathrm d^{i}}{\mathrm d x^{i}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="142" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i}}{\mathrm d_{u}^{0}{x}^{i}} f(x) = \frac{\mathrm d^{i}}{\mathrm d x^{i}} f(x) $">
+</DIV><P></P>
+
+<P>
+and so
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{0}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d_{u}^{0}{x}^{i}} f(x) \Big\} = \frac{\mathrm d}{\mathrm d_{u}^{0}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d x^{i}} f(x) \Big\}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="238" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{0}{x}} \Big\{ \frac{\mathrm d^{i}...
+...\mathrm d_{u}^{0}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d x^{i}} f(x) \Big\} $">
+</DIV><P></P>
+
+<P>
+giving
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i+1}}{\mathrm d_{u}^{0}{x}^{i+1}} f(x) = \frac{\mathrm d^{i+1}}{\mathrm d x^{i+1}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="172" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{0}{x}^{i+1}} f(x) = \frac{\mathrm d^{i+1}}{\mathrm d x^{i+1}} f(x) $">
+</DIV><P></P>
+
+<P>
+which completes the induction.
+ <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">12</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\forall i\in\mathbb{N},\quad\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) = \frac{\mathrm d^{i}}{\mathrm d_{-u}^{-h}{x}^{i}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="223" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img174.gif"
+ ALT="$\displaystyle \forall i\in\mathbb{N},\quad\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) = \frac{\mathrm d^{i}}{\mathrm d_{-u}^{-h}{x}^{i}} f(x) $">
+</DIV><P></P>
+<A NAME="dischigherinv"></A></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+ By induction on <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Let <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.gif"
+ ALT="$ p(i)$"></SPAN> be the statement above about <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Certainly <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.gif"
+ ALT="$ p(1)$"></SPAN> holds by Proposition&nbsp;<A HREF="node3.html#ddinv">2.6</A>.
+
+<P>
+By hypothesis,
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) = \frac{\mathrm d^{i}}{\mathrm d_{-u}^{-h}{x}^{i}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="159" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) = \frac{\mathrm d^{i}}{\mathrm d_{-u}^{-h}{x}^{i}} f(x) $">
+</DIV><P></P>
+
+<P>
+and so
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) \Big\} = \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d_{-u}^{-h}{x}^{i}} f(x) \Big\}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="255" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d^{i}...
+...u}^{h}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d_{-u}^{-h}{x}^{i}} f(x) \Big\} $">
+</DIV><P></P>
+
+<P>
+giving
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} f(x) & = & \frac{\mathrm d}{\mathrm d_{-u}^{-h}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d_{-u}^{-h}{x}^{i}} f(x)
+\Big\} \\
+& = & \frac{\mathrm d^{i+1}}{\mathrm d_{-u}^{-h}{x}^{i+1}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="82" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="134" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{-u}^{-h}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d_{-u}^{-h}{x}^{i}} f(x)
+\Big\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="92" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i+1}}{\mathrm d_{-u}^{-h}{x}^{i+1}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which completes the induction.
+ <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">13</SPAN></B> &nbsp;
+First order Discrete Derivatives commute with
+arbitrary order Discrete Derivatives.
+<!-- MATH
+ \begin{displaymath}
+\forall i\in\mathbb{N},\quad\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} f(x) = \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="269" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img179.gif"
+ ALT="$\displaystyle \forall i\in\mathbb{N},\quad\frac{\mathrm d^{i}}{\mathrm d_{u}^{h...
+...m d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) $">
+</DIV><P></P>
+<A NAME="ddcommwithhdd"></A></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+ By induction on <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Let <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.gif"
+ ALT="$ p(i)$"></SPAN> be the statement above about <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Certainly <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.gif"
+ ALT="$ p(1)$"></SPAN> holds by Proposition&nbsp;<A HREF="node3.html#ddcomm">2.7</A>.
+
+<P>
+By hypothesis,
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} f(x) = \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="205" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img180.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \frac{\mathrm d}{\...
+...m d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) $">
+</DIV><P></P>
+
+<P>
+and so
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} f(x) \Big\} = \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) \Big\}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="301" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d^{i}...
+...athrm d_{v}^{j}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) \Big\} $">
+</DIV><P></P>
+
+<P>
+giving
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} f(x) & = & \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) \\
+& = & \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="110" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img182.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="123" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="110" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{v}^{j}{x}} \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which completes the induction.
+ <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+We can supersede this proposition now with a more general one.
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">14</SPAN></B> &nbsp;
+Arbitrary order Discrete Derivatives commute
+with other arbitrary order Discrete Derivatives.
+<!-- MATH
+ \begin{displaymath}
+\forall i,k\in\mathbb{N},\quad\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} f(x) = \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="298" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.gif"
+ ALT="$\displaystyle \forall i,k\in\mathbb{N},\quad\frac{\mathrm d^{i}}{\mathrm d_{u}^...
+...{\mathrm d_{v}^{j}{x}^{k}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) $">
+</DIV><P></P>
+<A NAME="hddcomm"></A></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+ By induction on <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Let <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.gif"
+ ALT="$ p(i)$"></SPAN> be the statement above about <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$ i$"></SPAN>.
+
+<P>
+Certainly <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.gif"
+ ALT="$ p(1)$"></SPAN> holds by Proposition&nbsp;<A HREF="node3.html#ddcommwithhdd">2.13</A>.
+
+<P>
+By hypothesis,
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} f(x) = \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="219" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \frac{\mathrm d^{k...
+...{\mathrm d_{v}^{j}{x}^{k}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) $">
+</DIV><P></P>
+
+<P>
+and so
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} f(x) \Big\} = \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) \Big\}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="316" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \Big\{ \frac{\mathrm d^{i}...
+...m d_{v}^{j}{x}^{k}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) \Big\} $">
+</DIV><P></P>
+
+<P>
+giving
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} f(x) & = & \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) \\
+& = & \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="117" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img188.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="131" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img189.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="117" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.gif"
+ ALT="$\displaystyle \frac{\mathrm d^{k}}{\mathrm d_{v}^{j}{x}^{k}} \frac{\mathrm d^{i+1}}{\mathrm d_{u}^{h}{x}^{i+1}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which completes the induction.
+ <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+
+<H1><A NAME="SECTION00340000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN> Theorems involving the Discrete Derivative</A>
+</H1>
+
+<P>
+There are a few theorems that can now be introduced.
+
+<P>
+<P>
+<DIV><A NAME="taylorclone"><B>Theorem  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN></B></A> (Expanding a function in terms of its Discrete Derivatives)  &nbsp;
+Consider an analytic function <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ f$"></SPAN> and a
+constant <!-- MATH
+ $h\in\mathbb{R}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.gif"
+ ALT="$ h\in\mathbb{R}$"></SPAN>. Then if <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img192.gif"
+ ALT="$ a$"></SPAN> is a multiple of <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ h$"></SPAN>,
+
+<P>
+
+<OL>
+<LI>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+f(x+a) & = & f(x) + a \frac{\mathrm d}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}} f(x) +
+\frac{a(a-h)}{2!}\frac{\mathrm d^{2}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{2}} f(x) \\
+& & + \frac{a(a-h)(a-2h)}{3!}\frac{\mathrm d^{3}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{3}} f(x) + \ldots \\
+& = & f(x) + \sum_{i=0}^{\infty} \left( \prod_{j=0}^{i}
+\frac{a-jh}{j+1} \right) \frac{\mathrm d^{i+1}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{i+1}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.gif"
+ ALT="$\displaystyle f(x+a)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="280" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.gif"
+ ALT="$\displaystyle f(x) + a \frac{\mathrm d}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}...
+...!}\frac{\mathrm d^{2}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{2}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="239" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.gif"
+ ALT="$\displaystyle + \frac{a(a-h)(a-2h)}{3!}\frac{\mathrm d^{3}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{3}} f(x) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="262" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.gif"
+ ALT="$\displaystyle f(x) + \sum_{i=0}^{\infty} \left( \prod_{j=0}^{i}
+\frac{a-jh}{j+1...
+...rac{\mathrm d^{i+1}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{i+1}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+<LI>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+f(x+a) & = & f(x) + a \frac{\mathrm d}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{h}{x}} f(x) +
+\frac{a(a+h)}{2!}\frac{\mathrm d^{2}}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{h}{x}^{2}} f(x) \\
+& & + \frac{a(a+h)(a+2h)}{3!}\frac{\mathrm d^{3}}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{h}{x}^{3}} f(x) + \ldots \\
+& = & f(x) + \sum_{i=0}^{\infty} \left( \prod_{j=0}^{i}
+\frac{a+jh}{j+1} \right) \frac{\mathrm d^{i+1}}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{h}{x}^{i+1}} f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.gif"
+ ALT="$\displaystyle f(x+a)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="261" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.gif"
+ ALT="$\displaystyle f(x) + a \frac{\mathrm d}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^...
+...2!}\frac{\mathrm d^{2}}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{h}{x}^{2}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="230" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.gif"
+ ALT="$\displaystyle + \frac{a(a+h)(a+2h)}{3!}\frac{\mathrm d^{3}}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{h}{x}^{3}} f(x) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="253" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img199.gif"
+ ALT="$\displaystyle f(x) + \sum_{i=0}^{\infty} \left( \prod_{j=0}^{i}
+\frac{a+jh}{j+1...
+...frac{\mathrm d^{i+1}}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{h}{x}^{i+1}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+</LI>
+</OL></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+
+For <!-- MATH
+ $n\in\mathbb{N},h\in\mathbb{C},h\neq0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="130" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.gif"
+ ALT="$ n\in\mathbb{N},h\in\mathbb{C},h\neq0$"></SPAN>,
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\mathbf{E}^{nh}f(x) & = & (1+\{\mathbf{E}^h-1\})^n f(x)\\
+& = & (1+h\frac{\mathrm d}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}})^n f(x)\\
+& = & \Big\{1 + nh\frac{\mathrm d}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}} +
+\frac{n(n-1)}{2!}h^2\frac{\mathrm d^{2}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{2}} \\
+& & + \frac{n(n-1)(n-2)}{3!}h^3\frac{\mathrm d^{3}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{3}} + \ldots \Big\}
+f(x) \\
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="61" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.gif"
+ ALT="$\displaystyle \mathbf{E}^{nh}f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="139" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$\displaystyle (1+\{\mathbf{E}^h-1\})^n f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="127" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img203.gif"
+ ALT="$\displaystyle (1+h\frac{\mathrm d}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}})^n f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="236" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$\displaystyle \Big\{1 + nh\frac{\mathrm d}{\mathrm d_{-{\scriptstyle \frac{1}{2...
+...{2!}h^2\frac{\mathrm d^{2}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{2}}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="260" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.gif"
+ ALT="$\displaystyle + \frac{n(n-1)(n-2)}{3!}h^3\frac{\mathrm d^{3}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{3}} + \ldots \Big\}
+f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+introducing a change of variable <SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img206.gif"
+ ALT="$ a=nh$"></SPAN>,
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\mathbf{E}^a f(x) & = & \Big\{1 + a\frac{\mathrm d}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}} +
+\frac{a(a-h)}{2!}\frac{\mathrm d^{2}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{2}} \\
+& & + \frac{a(a-h)(a-2h)}{3!}\frac{\mathrm d^{3}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{3}} + \ldots \Big\}
+f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img207.gif"
+ ALT="$\displaystyle \mathbf{E}^a f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="210" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$\displaystyle \Big\{1 + a\frac{\mathrm d}{\mathrm d_{-{\scriptstyle \frac{1}{2}...
+...h)}{2!}\frac{\mathrm d^{2}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{2}}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="252" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.gif"
+ ALT="$\displaystyle + \frac{a(a-h)(a-2h)}{3!}\frac{\mathrm d^{3}}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}^{3}} + \ldots \Big\}
+f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which gives (i).  To get (ii), send <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ h$"></SPAN> to <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ -h$"></SPAN>, and make use
+of Proposition&nbsp;<A HREF="node3.html#dischigherinv">2.12</A>.  Then send <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img192.gif"
+ ALT="$ a$"></SPAN> to <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.gif"
+ ALT="$ -a$"></SPAN> to
+get the final result.
+ <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Conjecture  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN></B> &nbsp;
+Theorem&nbsp;<A HREF="node3.html#taylorclone">2.1</A> holds for all <!-- MATH
+ $a\in\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.gif"
+ ALT="$ a\in\mathbb{C}$"></SPAN>.</DIV><P></P>
+
+<P>
+It seems reasonable to imagine that this should be the case,
+especially as <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ f$"></SPAN> is analytic, which imposes many constraints,
+but sadly I have not managed to prove this.
+
+<P>
+There are some interesting things to note from
+Theorem&nbsp;<A HREF="node3.html#taylorclone">2.1</A>:
+
+<OL>
+<LI>The Taylor Expansion expands a function about a point in terms
+of its Continuous Derivatives, whereas the above expansions expand
+a function in terms of its <SPAN  CLASS="textit">more general</SPAN> Discrete
+Derivatives.  The equations additionally hold for <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.gif"
+ ALT="$ h=0 $"></SPAN>, since
+they then simply express Taylor's Theorem.
+</LI>
+<LI>We see the special values of <!-- MATH
+ $u=-{\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u=-{\scriptstyle \frac{1}{2}}$"></SPAN> and <!-- MATH
+ $u={\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ u={\scriptstyle \frac{1}{2}}$"></SPAN> in the derivatives above.  This corresponds to
+`right-sided' and `left-sided' derivatives respectively.  This is
+in contrast to the Discrete Integral whereby the values refer to
+`left-sided' and `right-sided' integrals respectively.
+</LI>
+</OL>
+
+<P>
+<P>
+<DIV><B>Theorem  <SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN></B> (Expressing the Discrete Derivative of a function in
+terms of the function's continuous derivatives)  &nbsp;
+Any Discrete
+Derivative of an analytic function can be expanded in terms of the
+Continuous Derivatives of the same function.</DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+
+Consider an analytic function <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ f$"></SPAN>.
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\mathbf{E}^{({\scriptstyle \frac{1}{2}}-u)h}f(x) & = & f(x+({\scriptstyle \frac{1}{2}}-u)h) \\
+& = & f(x) + ({\scriptstyle \frac{1}{2}}-u)h\frac{\mathrm d}{\mathrm d{x}}f(x) +
+\frac{({\scriptstyle \frac{1}{2}}-u)^2 h^2}{2!}\frac{\mathrm d^{2}}{\mathrm d x^{2}} f(x) \\
+& & + \frac{({\scriptstyle \frac{1}{2}}-u)^3 h^3}{3!}\frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) + \ldots
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="88" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.gif"
+ ALT="$\displaystyle \mathbf{E}^{({\scriptstyle \frac{1}{2}}-u)h}f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="108" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img214.gif"
+ ALT="$\displaystyle f(x+({\scriptstyle \frac{1}{2}}-u)h)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="305" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img215.gif"
+ ALT="$\displaystyle f(x) + ({\scriptstyle \frac{1}{2}}-u)h\frac{\mathrm d}{\mathrm d{...
+...criptstyle \frac{1}{2}}-u)^2 h^2}{2!}\frac{\mathrm d^{2}}{\mathrm d x^{2}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="181" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img216.gif"
+ ALT="$\displaystyle + \frac{({\scriptstyle \frac{1}{2}}-u)^3 h^3}{3!}\frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+by Taylor Expansion.  Similarly
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-u)h}f(x) & = & f(x+(-{\scriptstyle \frac{1}{2}}-u)h) \\
+& = & f(x) + (-{\scriptstyle \frac{1}{2}}-u)h\frac{\mathrm d}{\mathrm d{x}}f(x) +
+\frac{(-{\scriptstyle \frac{1}{2}}-u)^2 h^2}{2!}\frac{\mathrm d^{2}}{\mathrm d x^{2}} f(x) \\
+& & + \frac{(-{\scriptstyle \frac{1}{2}}-u)^3 h^3}{3!}\frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) + \ldots
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="97" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.gif"
+ ALT="$\displaystyle \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-u)h}f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="120" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.gif"
+ ALT="$\displaystyle f(x+(-{\scriptstyle \frac{1}{2}}-u)h)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="328" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.gif"
+ ALT="$\displaystyle f(x) + (-{\scriptstyle \frac{1}{2}}-u)h\frac{\mathrm d}{\mathrm d...
+...criptstyle \frac{1}{2}}-u)^2 h^2}{2!}\frac{\mathrm d^{2}}{\mathrm d x^{2}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="193" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.gif"
+ ALT="$\displaystyle + \frac{(-{\scriptstyle \frac{1}{2}}-u)^3 h^3}{3!}\frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Hence
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) & = & \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x) \\
+& = & \Big[ ({\scriptstyle \frac{1}{2}}-u)-(-{\scriptstyle \frac{1}{2}}-u) \Big]\frac{\mathrm d}{\mathrm d{x}}f(x) \\
+& & + \frac{h}{2!}\Big[ ({\scriptstyle \frac{1}{2}}-u)^2-(-{\scriptstyle \frac{1}{2}}-u)^2 \Big]\frac{\mathrm d^{2}}{\mathrm d x^{2}} f(x) \\
+& & + \frac{h^2}{3!}\Big[ ({\scriptstyle \frac{1}{2}}-u)^3-(-{\scriptstyle \frac{1}{2}}-u)^3 \Big]\frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) + \ldots \\
+& = & \frac{\mathrm d}{\mathrm d_{0}^{1}{u}} (-u) \frac{\mathrm d}{\mathrm d{x}}f(x) + \frac{h}{2!}\frac{\mathrm d}{\mathrm d_{0}^{1}{u}} (-u)^2 \frac{\mathrm d^{2}}{\mathrm d x^{2}} f(x) \\
+& & + \frac{h^2}{3!}\frac{\mathrm d}{\mathrm d_{0}^{1}{u}} (-u)^3 \frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) + \ldots \\
+& = & \sum_{i=1}^\infty \frac{h^{i-1}}{i!}\frac{\mathrm d}{\mathrm d_{0}^{1}{u}} (-u)^i \frac{\mathrm d^{i}}{\mathrm d x^{i}}
+f(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="62" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="204" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.gif"
+ ALT="$\displaystyle \frac{1}{h}\left(\mathbf{E}^{({\scriptstyle \frac{1}{2}}-{u})h}
+- \mathbf{E}^{(-{\scriptstyle \frac{1}{2}}-{u})h} \right) f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="193" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.gif"
+ ALT="$\displaystyle \Big[ ({\scriptstyle \frac{1}{2}}-u)-(-{\scriptstyle \frac{1}{2}}-u) \Big]\frac{\mathrm d}{\mathrm d{x}}f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="240" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.gif"
+ ALT="$\displaystyle + \frac{h}{2!}\Big[ ({\scriptstyle \frac{1}{2}}-u)^2-(-{\scriptstyle \frac{1}{2}}-u)^2 \Big]\frac{\mathrm d^{2}}{\mathrm d x^{2}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="279" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.gif"
+ ALT="$\displaystyle + \frac{h^2}{3!}\Big[ ({\scriptstyle \frac{1}{2}}-u)^3-(-{\scriptstyle \frac{1}{2}}-u)^3 \Big]\frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="269" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{0}^{1}{u}} (-u) \frac{\mathrm d}{\mat...
+...thrm d}{\mathrm d_{0}^{1}{u}} (-u)^2 \frac{\mathrm d^{2}}{\mathrm d x^{2}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="193" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.gif"
+ ALT="$\displaystyle + \frac{h^2}{3!}\frac{\mathrm d}{\mathrm d_{0}^{1}{u}} (-u)^3 \frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="180" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img226.gif"
+ ALT="$\displaystyle \sum_{i=1}^\infty \frac{h^{i-1}}{i!}\frac{\mathrm d}{\mathrm d_{0}^{1}{u}} (-u)^i \frac{\mathrm d^{i}}{\mathrm d x^{i}}
+f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P> <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+This expression simplifies considerably for the three special
+cases of <!-- MATH
+ $u\in\{-{\scriptstyle \frac{1}{2}},0,{\scriptstyle \frac{1}{2}}\}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="97" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img227.gif"
+ ALT="$ u\in\{-{\scriptstyle \frac{1}{2}},0,{\scriptstyle \frac{1}{2}}\}$"></SPAN>.  Here are the expansions for
+these cases:
+
+<OL>
+<LI><!-- MATH
+ $u=-{\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u=-{\scriptstyle \frac{1}{2}}$"></SPAN>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}} f(x) & = & \frac{\mathrm d}{\mathrm d{x}}f(x) + \frac{h}{2!}\frac{\mathrm d^{2}}{\mathrm d x^{2}} f(x) +
+\frac{h^2}{3!}\frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) + \frac{h^3}{4!}\frac{\mathrm d^{4}}{\mathrm d x^{4}} f(x) + \ldots
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="73" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{-{\scriptstyle \frac{1}{2}}}^{h}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="367" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}f(x) + \frac{h}{2!}\frac{\mathrm d^...
+...x^{3}} f(x) + \frac{h^3}{4!}\frac{\mathrm d^{4}}{\mathrm d x^{4}} f(x) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ u=0$"></SPAN>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{0}^{h}{x}} f(x) & = & \frac{\mathrm d}{\mathrm d{x}}f(x) +
+\frac{1}{3!}\left(\frac{h}{2}\right)^2\frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) +
+\frac{1}{5!}\left(\frac{h}{2}\right)^4\frac{\mathrm d^{5}}{\mathrm d x^{5}} f(x) \\
+& & + \frac{1}{7!}\left(\frac{h}{2}\right)^6\frac{\mathrm d^{7}}{\mathrm d x^{7}} f(x) + \ldots
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="62" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{0}^{h}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="326" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}f(x) +
+\frac{1}{3!}\left(\frac{h}{2...
+...frac{1}{5!}\left(\frac{h}{2}\right)^4\frac{\mathrm d^{5}}{\mathrm d x^{5}} f(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="170" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img232.gif"
+ ALT="$\displaystyle + \frac{1}{7!}\left(\frac{h}{2}\right)^6\frac{\mathrm d^{7}}{\mathrm d x^{7}} f(x) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+<LI><!-- MATH
+ $u={\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ u={\scriptstyle \frac{1}{2}}$"></SPAN>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\mathrm d}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{h}{x}} f(x) & = & \frac{\mathrm d}{\mathrm d{x}}f(x) - \frac{h}{2!}\frac{\mathrm d^{2}}{\mathrm d x^{2}} f(x) +
+\frac{h^2}{3!}\frac{\mathrm d^{3}}{\mathrm d x^{3}} f(x) - \frac{h^3}{4!}\frac{\mathrm d^{4}}{\mathrm d x^{4}} f(x) + \ldots
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="64" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{h}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="367" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{x}}f(x) - \frac{h}{2!}\frac{\mathrm d^...
+...x^{3}} f(x) - \frac{h^3}{4!}\frac{\mathrm d^{4}}{\mathrm d x^{4}} f(x) + \ldots$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+</OL>
+
+<P>
+That just about rounds up all we need to say about the Discrete
+Derivative for now.  To finish up, we shall take a look at some
+common Discrete Derivatives.
+
+<P>
+
+<H1><A NAME="SECTION00350000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">5</SPAN> Some Standard Discrete Derivatives</A>
+</H1>
+
+<P>
+We have talked about Discrete Derivatives in some depth now, and
+so here I shall introduce a few common ones.  Please note that in
+the following tables I have only tabulated the Discrete Derivative
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ u=0$"></SPAN>.  This is all that is needed since the more general
+derivative can be found by substituting <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ x$"></SPAN> with <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ x-uh$"></SPAN> (see
+Proposition&nbsp;<A HREF="node3.html#dd0prop">2.4</A>).
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\renewedcommand{arraystretch}{2.5}\begin{array}[t]{|r|l|}
+\hline \qquad f(x) & \frac{\displaystyle \mathrm d}{\displaystyle \mathrm d_0^h x}
+f(x)
+\\[2ex]
+\hline \hline
+c\in\mathbb{C}& 0 \\
+\hline
+x & 1 \\
+x^2 & 2x \\
+x^3 & 3x^2 + \frac{1}{4}h^2 \\
+x^4 & 4x^3 + x h^2 \\
+x^5 & 5x^4 + \frac{5}{2}x^2 h^2 + \frac{1}{16}h^4 \\
+x^6 & 6x^5 + 5x^3 h^2 + \frac{3}{8}x h^4 \qquad \\
+\hline
+a^x & \frac{\displaystyle \sinh\{(h/2)\ln a\}}{\displaystyle (h/2)}\:a^x \\
+\hline
+\end{array}
+\quad
+\begin{array}[t]{|r|l|}
+\hline \qquad f(x) & \frac{\displaystyle \mathrm d}{\displaystyle \mathrm d_0^h x}
+f(x)
+\\[2ex]
+\hline \hline
+\mathrm e^x & \frac{\displaystyle \sinh(h/2)}{\displaystyle (h/2)}\:\mathrm e^x \\
+\mathrm e^{ix} & \frac{\displaystyle i\sin(h/2)}{\displaystyle (h/2)}\:\mathrm e^{ix} \\
+\hline
+\cos x & \frac{\displaystyle -\sin(h/2)}{\displaystyle (h/2)}\:\sin x \\
+\sin x & \frac{\displaystyle \sin(h/2)}{\displaystyle (h/2)}\:\cos x \\
+\tan x & \frac{\displaystyle \tan(h/2)}{\frac{\displaystyle h}{\displaystyle 2}\left(\displaystyle 1 -
+\frac{\sin^2 x}{\cos^2(h/2)}\right)} \qquad \\
+\hline
+\ln x & \frac{\displaystyle 1}{\displaystyle h}\ln\left(1 + \frac{\displaystyle 2h}{\displaystyle 2x-h}\right) \\
+\hline
+\end{array}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="512" HEIGHT="447" BORDER="0"
+ SRC="img236.gif"
+ ALT="\begin{displaymath}\renewedcommand{arraystretch}{2.5}\begin{array}[t]{\vert r\ve...
+...aystyle 2h}{\displaystyle 2x-h}\right) \\
+\hline
+\end{array} \end{displaymath}">
+</DIV><P></P>
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<HR>
+<table width="100%" border=0>
+<tr>
+<td align=left>
+
+<A NAME="tex2html102"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="index2.gif"></A>
+<A NAME="tex2html94"
+  HREF="node2.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev2.gif"></A>
+<A NAME="tex2html100"
+  HREF="index.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up2.gif"></A>
+<A NAME="tex2html104"
+  HREF="node4.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next2.gif"></A>
+</td>
+<td align=right>
+<a href="mailto:petemoore@worc0260.freeserve.co.uk"><img src="email.gif" border=0 width=56 height=30 alt="email"></a>
+<a href="http://www.worc0260.freeserve.co.uk/petemoore/maths/"><img src="home.gif" border=0 width=26 height=30 alt="home"></a>
+
+</td>
+</tr>
+</table>
+
+<HR>
+</DIV>
+<!--End of Navigation Panel-->
+&copy; <A HREF="mailto:petemoore@worc0260.freeserve.co.uk">Pete Moore<A> April 2001
+
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+</BODY>
+</HTML>

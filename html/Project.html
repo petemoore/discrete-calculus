@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>A Discrete Calculus</TITLE>
+<META NAME="description" CONTENT="A Discrete Calculus">
+<META NAME="keywords" CONTENT="Project">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Project.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<HR>
+<table width="100%" border=0>
+<tr>
+<td align=left>
+
+<A NAME="tex2html10"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="index2.gif"></A>
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev3.gif">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up3.gif">
+<A NAME="tex2html12"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next2.gif"></A>
+</td>
+<td align=right>
+<a href="mailto:petemoore@worc0260.freeserve.co.uk"><img src="email.gif" border=0 width=56 height=30 alt="email"></a>
+<a href="http://www.worc0260.freeserve.co.uk/petemoore/"><img src="home.gif" border=0 width=26 height=30 alt="home"></a>
+
+</td>
+</tr>
+</table>
+
+<HR>
+</DIV>
+<!--End of Navigation Panel-->
+
+<P>
+<H1 ALIGN=CENTER>A Discrete Calculus</H1>
+<P ALIGN=CENTER><STRONG><A href="mailto:petemoore@worc0260.freeserve.co.uk">Peter Moore</A>
+<BR>
+Birmingham University</STRONG></P>
+<BR><P ALIGN=CENTER><I>Date:</I> April 2001</P>
+<P ALIGN=LEFT></P>
+
+<H3>Abstract:</H3>
+<DIV CLASS="ABSTRACT">
+This paper introduces the reader to a <SPAN  CLASS="textit">`Discrete Calculus'</SPAN>
+- a reformulation of present-day Calculus which allows the
+requirement to limit what is typically denoted by <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ h$"></SPAN>, to be
+relaxed.  Rather, this `Discrete Calculus' is an environment where
+such an <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ h$"></SPAN> is allowed to be a non-zero real.
+
+<P>
+Throughout this paper, Calculus, as it is traditionally defined,
+is referred to as <SPAN  CLASS="textit">`Continuous Calculus'</SPAN>, to save confusion.
+
+<P>
+The significance of <SPAN  CLASS="textit">Discrete Derivatives</SPAN> and <SPAN  CLASS="textit">Discrete
+Integrals</SPAN> is discussed.
+
+<P>
+A new notation is developed to be consistent with Continuous
+Calculus. It is shown that this new Calculus encompasses all that
+is described by Continuous Calculus, moreover, Continuous
+Derivatives and Continuous Integrals are shown to be a special
+case of this new type. In this sense, Discrete Calculus logically
+extends Continuous Calculus. Discrete Calculus describes a more
+general Calculus than Continuous Calculus, and so in this paper,
+standard results from Calculus are adapted to hold generally under
+the new definitions.
+
+<P>
+A more general and entirely original form of the Euler-Maclaurin
+sum is derived and studied.
+
+<P>
+Finally, there is an summary of further results, stated without
+proof.
+
+<P>
+It was intended to have proofs for all propositions and results,
+but sadly I was unable to complete this in time. However, many
+results are quite straightforward and do not really require
+justification.
+</DIV>
+<P>
+
+<P>
+
+<P>
+<BR>  <DIV CLASS="centerline" ID="par5225" ALIGN="CENTER">
+<SPAN  CLASS="textit">This
+paper is dedicated to Alun Williams, the greatest of teachers, who
+inspired this work.</SPAN></DIV>
+
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html14"
+  HREF="node1.html">Contents</A>
+<LI><A NAME="tex2html15"
+  HREF="node2.html"><SPAN CLASS="arabic">1</SPAN>. Introduction</A>
+<UL>
+<LI><A NAME="tex2html16"
+  HREF="node2.html#SECTION00210000000000000000"><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Chessboard problem</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html17"
+  HREF="node3.html"><SPAN CLASS="arabic">2</SPAN>. The Discrete Derivative</A>
+<UL>
+<LI><A NAME="tex2html18"
+  HREF="node3.html#SECTION00310000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Shift Operator</A>
+<UL>
+<LI><A NAME="tex2html19"
+  HREF="node3.html#SECTION00311000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Shifting Operator</A>
+</UL>
+<LI><A NAME="tex2html20"
+  HREF="node3.html#SECTION00320000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN> The Discrete Derivative</A>
+<UL>
+<LI><A NAME="tex2html21"
+  HREF="node3.html#SECTION00321000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Discrete Derivative</A>
+</UL>
+<LI><A NAME="tex2html22"
+  HREF="node3.html#SECTION00330000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN> Higher Order Derivatives</A>
+<UL>
+<LI><A NAME="tex2html23"
+  HREF="node3.html#SECTION00331000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of Higher Order Derivatives</A>
+</UL>
+<LI><A NAME="tex2html24"
+  HREF="node3.html#SECTION00340000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN> Theorems involving the Discrete Derivative</A>
+<LI><A NAME="tex2html25"
+  HREF="node3.html#SECTION00350000000000000000"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">5</SPAN> Some Standard Discrete Derivatives</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html26"
+  HREF="node4.html"><SPAN CLASS="arabic">3</SPAN>. The Discrete Integral</A>
+<UL>
+<LI><A NAME="tex2html27"
+  HREF="node4.html#SECTION00410000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Partial Discrete Derivative</A>
+<LI><A NAME="tex2html28"
+  HREF="node4.html#SECTION00420000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN> The Indefinite Discrete Integral</A>
+<UL>
+<LI><A NAME="tex2html29"
+  HREF="node4.html#SECTION00421000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Indefinite Discrete Integral</A>
+</UL>
+<LI><A NAME="tex2html30"
+  HREF="node4.html#SECTION00430000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN> The Definite Discrete Integral</A>
+<UL>
+<LI><A NAME="tex2html31"
+  HREF="node4.html#SECTION00431000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Definite Discrete Integral</A>
+</UL>
+<LI><A NAME="tex2html32"
+  HREF="node4.html#SECTION00440000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN> Theorems involving the Discrete Integral</A>
+<LI><A NAME="tex2html33"
+  HREF="node4.html#SECTION00450000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN> Some Standard Discrete Integrals</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html34"
+  HREF="node5.html"><SPAN CLASS="arabic">4</SPAN>. The Discrete Integral Expansion Formula</A>
+<UL>
+<LI><A NAME="tex2html35"
+  HREF="node5.html#SECTION00510000000000000000"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Euler-Maclaurin Sum Formula</A>
+<LI><A NAME="tex2html36"
+  HREF="node5.html#SECTION00520000000000000000"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN> The Discrete Integral Expansion Formula</A>
+<LI><A NAME="tex2html37"
+  HREF="node5.html#SECTION00530000000000000000"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN> Early Results</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html38"
+  HREF="node6.html">A. The Discrete Integral Expansion Formula</A>
+<LI><A NAME="tex2html39"
+  HREF="node7.html">B. Bernoulli Numbers and e(u) Polynomials</A>
+<UL>
+<LI><A NAME="tex2html40"
+  HREF="node7.html#SECTION00710000000000000000">B.<SPAN CLASS="arabic">1</SPAN> The e(u) Polynomials</A>
+<LI><A NAME="tex2html41"
+  HREF="node7.html#SECTION00720000000000000000">B.<SPAN CLASS="arabic">2</SPAN> The Bernoulli Numbers</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html42"
+  HREF="node8.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<HR>
+<table width="100%" border=0>
+<tr>
+<td align=left>
+
+<A NAME="tex2html10"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="index2.gif"></A>
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev3.gif">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up3.gif">
+<A NAME="tex2html12"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next2.gif"></A>
+</td>
+<td align=right>
+<a href="mailto:petemoore@worc0260.freeserve.co.uk"><img src="email.gif" border=0 width=56 height=30 alt="email"></a>
+<a href="http://www.worc0260.freeserve.co.uk/petemoore/"><img src="home.gif" border=0 width=26 height=30 alt="home"></a>
+
+</td>
+</tr>
+</table>
+
+<HR>
+</DIV>
+<!--End of Navigation Panel-->
+&copy; <A HREF="mailto:petemoore@worc0260.freeserve.co.uk">Pete Moore<A> April 2001
+</BODY>
+</HTML>

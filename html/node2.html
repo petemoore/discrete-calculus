@@ -1,0 +1,628 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1. Introduction</TITLE>
+<META NAME="description" CONTENT="1. Introduction">
+<META NAME="keywords" CONTENT="Project">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Project.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="index.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+
+
+
+
+<table width="100%" border=0 cellpadding = 50>
+<tr>
+<td>
+
+
+
+
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<HR>
+<table width="100%" border=0>
+<tr>
+<td align=left>
+
+<A NAME="tex2html89"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="index2.gif"></A>
+<A NAME="tex2html81"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev2.gif"></A>
+<A NAME="tex2html87"
+  HREF="index.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up2.gif"></A>
+<A NAME="tex2html91"
+  HREF="node3.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next2.gif"></A>
+</td>
+<td align=right>
+<a href="mailto:petemoore@worc0260.freeserve.co.uk"><img src="email.gif" border=0 width=56 height=30 alt="email"></a>
+<a href="http://www.worc0260.freeserve.co.uk/petemoore/maths/"><img src="home.gif" border=0 width=26 height=30 alt="home"></a>
+
+</td>
+</tr>
+</table>
+
+<HR>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html93"
+  HREF="#SECTION00210000000000000000"><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Chessboard problem</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00200000000000000000"></A>
+<A NAME="intro"></A>
+<BR>
+<SPAN CLASS="arabic">1</SPAN>. Introduction
+</H1> There are many problems in mathematics which are
+concerned with both evaluating and understanding discrete sums. It
+is my intention to introduce some mathematical tools to help
+investigate such problems, to save us from approaching each
+problem from first principles.
+
+<P>
+In the past, people have considered the application of Discrete
+Calculus to be limited to problems in computation, numerical
+methods and the study of sequences. I fervently believe that this
+is a serious underestimation.  I hope to introduce the reader to
+some surprising results.
+
+<P>
+But first, let's start with an example.
+
+<P>
+
+<H1><A NAME="SECTION00210000000000000000"></A> <A NAME="chess"></A>
+<BR>
+<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Chessboard problem
+</H1>
+Consider a regular chessboard, with eight by eight squares. The
+question is, how many squares are there in total?
+
+<P>
+The answer is there are 204.  Why is this?
+
+<P>
+Let's start by considering the biggest square present, the
+perimeter of the board.  Clearly there is only one square present
+of this size.
+
+<P>
+Logically, the next size square to consider is the next largest, 7
+by 7.  By just considering the possible places where the bottom
+left corner of the square can go, we see that there are four such
+squares on the board.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="chessfig"></A><A NAME="304"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.1:</STRONG>
+Where the bottom left corner can go for <!-- MATH
+ $6 \times 6$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ 6 \times 6$"></SPAN>
+squares.</CAPTION>
+<TR><TD>
+<DIV CLASS="centerline" ID="par5229" ALIGN="CENTER">
+<IMG SRC="chess.jpg" WIDTH="310" HEIGHT="326" ALT="Chessboard">
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+With each iteration of square size, we see that the possible
+positions to put the bottom left corner of the considered square
+itself forms a square grid of points, the size of this square
+being <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ 8-r$"></SPAN> by <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ 8-r$"></SPAN>.
+
+<P>
+We finish the iteration when we reach the fact that there are 64
+one by one squares on the board, since no smaller squares exist.
+
+<P>
+Let's denote the total number of squares by <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ n$"></SPAN>. We now know
+that
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="chesssol"></A><!-- MATH
+ \begin{equation}
+n=1^2+2^2+3^2+4^2+5^2+6^2+7^2+8^2=\sum_{i=1}^8 i^2=204
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="374" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\displaystyle n=1^2+2^2+3^2+4^2+5^2+6^2+7^2+8^2=\sum_{i=1}^8 i^2=204$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+And this is when we reach the crunch point!  This quantity can be
+interpreted geometrically as the area represented in
+Figure&nbsp;<A HREF="node2.html#graph1fig">1.2</A>.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="graph1fig"></A><A NAME="314"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure: 1.2</STRONG>
+<SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$ y=x^2$"></SPAN> with right-sided strips</CAPTION>
+<TR><TD>
+<DIV CLASS="centerline" ID="par5246" ALIGN="CENTER">
+<IMG SRC="graph1.jpg" ALT="Right-sided strips" WIDTH="413" HEIGHT="357">
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Since the width of each strip is 1, the total area is numerically
+equal to the sum of the heights of the strips, i.e. <!-- MATH
+ $\sum_{i=1}^8
+i^2 = 204$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$ \sum_{i=1}^8
+i^2 = 204$"></SPAN>.
+
+<P>
+As can be seen, the considered area looks somewhat similar to the
+integral of <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$ x^2$"></SPAN> evaluated between 0 and 8 (which is
+<!-- MATH
+ $170\frac{2}{3}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ 170\frac{2}{3}$"></SPAN>). However, the area of the Discrete integral is
+larger than the area of the <SPAN  CLASS="textit">continuous</SPAN> integral.
+
+<P>
+Take a look at Figure&nbsp;<A HREF="node2.html#graph2fig">1.3</A>.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="graph2fig"></A><A NAME="324"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure: 1.3</STRONG>
+<SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$ y=x^2$"></SPAN> with left-sided strips</CAPTION>
+<TR><TD>
+<DIV CLASS="centerline" ID="par5261" ALIGN="CENTER">
+<IMG SRC="graph2.jpg" ALT="Left-sided strips" WIDTH="443" HEIGHT="443">
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Here we again see that the area of the strips is equal to
+<!-- MATH
+ $\sum_{i=1}^8 i^2 = 204$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$ \sum_{i=1}^8
+i^2 = 204$"></SPAN>.  However, this time we have an
+alternative construction.  The curve is the same (<SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$ y=x^2$"></SPAN>),
+however this time we have used left-sided strips, and our Discrete
+integral is now somewhat similar to the integral of <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$ x^2$"></SPAN>
+evaluated between 1 and 9.  Also note that this time the Discrete
+integral is numerically less than its continuous analogue (which
+is 243).
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="comparefig"></A><A NAME="330"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure: 1.4</STRONG>
+How left-sided and right-sided strips compare</CAPTION>
+<TR><TD>
+<DIV CLASS="centerline" ID="par5276" ALIGN="CENTER">
+<IMG SRC="compare.jpg" ALT="Comparison of left and right-sided strips" WIDTH="275" HEIGHT="150">
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Common sense says that we should now make a decision. We must
+surely choose which type of construction we wish to be concerned
+with, and ignore the other.  But which do we choose?
+
+<P>
+Well perhaps it would make sense to choose neither, but instead
+consider a third type of integral, a centered one, as represented
+in Figure&nbsp;<A HREF="node2.html#graph3fig">1.5</A>.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="graph3fig"></A><A NAME="336"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure: 1.5</STRONG>
+<SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$ y=x^2$"></SPAN> with centered strips</CAPTION>
+<TR><TD>
+<DIV CLASS="centerline" ID="par5281" ALIGN="CENTER">
+<IMG SRC="graph3.jpg" ALT="Centred strips" WIDTH="468" HEIGHT="332">
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+This time we have a more `independent' construction, one which
+favors neither left nor right.  This time the Discrete Integral is
+much closer in value to the Continuous Integral evaluated over the
+same range. The Continuous Integral of <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$ x^2$"></SPAN> between <!-- MATH
+ ${\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$ {\scriptstyle \frac{1}{2}}$"></SPAN>
+and <!-- MATH
+ $8{\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ 8{\scriptstyle \frac{1}{2}}$"></SPAN> is <!-- MATH
+ $204\frac{17}{24}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ 204\frac{17}{24}$"></SPAN>. So it seems that this is a
+much better `unbiased' choice of construction.
+
+<P>
+Well I am still not completely happy with this choice.  In some
+scenarios it might be convenient to choose one of the former two
+constructions in preference to this `centered' type.  Well there
+is a solution which turns out to be very powerful. This is to have
+a <SPAN  CLASS="textit">variable</SPAN> type, one which allows for an arbitrary offset,
+including the three pre-mentioned types.
+
+<P>
+After many choices of notation, the most sensible choice seemed to
+be to slightly modify the notation of Continuous Calculus to
+contain two additional parameters (the width of the strip and the
+offset described above).  In this notation, a left-sided integral
+is one where <!-- MATH
+ $u=-{\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u=-{\scriptstyle \frac{1}{2}}$"></SPAN>, centered when <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ u=0$"></SPAN> and right-sided
+when <!-- MATH
+ $u={\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ u={\scriptstyle \frac{1}{2}}$"></SPAN>.  This is because <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ u$"></SPAN> represents the offset
+from the center of the strip in multiples of <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ h$"></SPAN>, the width of
+the strips.
+
+<P>
+So the quantity we are calculating turns out to be precisely
+<!-- MATH
+ \begin{displaymath}
+\int\limits_0^8 x^2\;\mathrm{d}_{{\scriptstyle \frac{1}{2}}}^1 x
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="68" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$\displaystyle \int\limits_0^8 x^2\;\mathrm{d}_{{\scriptstyle \frac{1}{2}}}^1 x
+$">
+</DIV><P></P>
+The <!-- MATH
+ $\mathrm{d}_{{\scriptstyle \frac{1}{2}}}^1 x$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ \mathrm{d}_{{\scriptstyle \frac{1}{2}}}^1 x$"></SPAN> tells us that we are integrating
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ x$"></SPAN> with <!-- MATH
+ $u={\scriptstyle \frac{1}{2}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ u={\scriptstyle \frac{1}{2}}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img26.gif"
+ ALT="$ h=1$"></SPAN>.
+
+<P>
+It can be shown that
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="intxsq"></A><!-- MATH
+ \begin{equation}
+\int\limits_a^b x^2\;\mathrm{d}_u^h x =
+\left[\frac{1}{3}x^3+uhx^2+(u^2-\frac{1}{12})h^2x\right]_{x=a}^{x=b}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="308" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.gif"
+ ALT="$\displaystyle \int\limits_a^b x^2\;\mathrm{d}_u^h x = \left[\frac{1}{3}x^3+uhx^2+(u^2-\frac{1}{12})h^2x\right]_{x=a}^{x=b}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Here are a few of the trivial results that one should expect from
+this formula. This is by no means an exhaustive list of such
+results, merely a demonstration of a few.
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="discrmeetcont"></A><A NAME="n1"></A><A NAME="nofeight"></A><!-- MATH
+ \begin{eqnarray}
+\lim_{h\to0}\left[\int\limits_a^b x^2\;\mathrm{d}_u^h x\right]
+& = & \int\limits_a^b x^2\;\mathrm{d}x\\
+\int\limits_0^8 x^2\;\mathrm{d}_{{\scriptstyle \frac{1}{2}}}^1 x & = & 204\\
+\int\limits_0^8 x^2\;\mathrm{d}_{{\scriptstyle \frac{1}{2}}}^8 x & = & 8\times8^2 = 512
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="114" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$\displaystyle \lim_{h\to0}\left[\int\limits_a^b x^2\;\mathrm{d}_u^h x\right]$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="59" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.gif"
+ ALT="$\displaystyle \int\limits_a^b x^2\;\mathrm{d}x$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="68" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$\displaystyle \int\limits_0^8 x^2\;\mathrm{d}_{{\scriptstyle \frac{1}{2}}}^1 x
+$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="28" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.gif"
+ ALT="$\displaystyle 204$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="68" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$\displaystyle \int\limits_0^8 x^2\;\mathrm{d}_{{\scriptstyle \frac{1}{2}}}^8 x$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="87" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.gif"
+ ALT="$\displaystyle 8\times8^2 = 512$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+As the width of the strips decreases, the area represented by the
+strips closer approximates the value of the integral.  Hence
+(<A HREF="node2.html#discrmeetcont">1.3</A>).  (<A HREF="node2.html#n1">1.4</A>) follows from (<A HREF="node2.html#chesssol">1.1</A>)
+and finally, (<A HREF="node2.html#nofeight">1.5</A>) makes sense when you consider that
+this integral represents there being one strip of width&nbsp;8 and with
+height&nbsp;<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.gif"
+ ALT="$ 8^2=64$"></SPAN> since this is the value of the function at
+<SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.gif"
+ ALT="$ x=8$"></SPAN>.
+
+<P>
+It is possible to rewrite (<A HREF="node2.html#intxsq">1.2</A>) in a simpler form:
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+\int\limits_a^b x^2\;\mathrm{d}_u^h x & = & \int\limits_a^b
+(x+uh)^2\;\mathrm{d}_0^h x \nonumber \\
+& = &
+\left[\frac{1}{3}(x+uh)^3-\frac{1}{12}h^2(x+uh)\right]_{x=a}^{x=b}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="67" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$\displaystyle \int\limits_a^b x^2\;\mathrm{d}_u^h x$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="111" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$\displaystyle \int\limits_a^b
+(x+uh)^2\;\mathrm{d}_0^h x$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="225" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.gif"
+ ALT="$\displaystyle \left[\frac{1}{3}(x+uh)^3-\frac{1}{12}h^2(x+uh)\right]_{x=a}^{x=b}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This makes sense when you consider that if a function to be
+integrated is to be offset by <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ uh$"></SPAN>, it does not have to be
+expressed by the <!-- MATH
+ $\mathrm{d}_u^h x$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$ \mathrm{d}_u^h x$"></SPAN>, but it could be offset in
+the function itself, and a centered integral (<!-- MATH
+ $\mathrm{d}_0^h
+x$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.gif"
+ ALT="$ \mathrm{d}_0^h
+x$"></SPAN>) could be used instead.
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<HR>
+<table width="100%" border=0>
+<tr>
+<td align=left>
+
+<A NAME="tex2html89"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="index2.gif"></A>
+<A NAME="tex2html81"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev2.gif"></A>
+<A NAME="tex2html87"
+  HREF="index.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up2.gif"></A>
+<A NAME="tex2html91"
+  HREF="node3.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next2.gif"></A>
+</td>
+<td align=right>
+<a href="mailto:petemoore@worc0260.freeserve.co.uk"><img src="email.gif" border=0 width=56 height=30 alt="email"></a>
+<a href="http://www.worc0260.freeserve.co.uk/petemoore/maths/"><img src="home.gif" border=0 width=26 height=30 alt="home"></a>
+
+</td>
+</tr>
+</table>
+
+<HR>
+</DIV>
+<!--End of Navigation Panel-->
+&copy; <A HREF="mailto:petemoore@worc0260.freeserve.co.uk">Pete Moore<A> April 2001
+
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+</BODY>
+</HTML>

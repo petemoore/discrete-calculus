@@ -1,0 +1,1184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4. The Discrete Integral Expansion Formula</TITLE>
+<META NAME="description" CONTENT="4. The Discrete Integral Expansion Formula">
+<META NAME="keywords" CONTENT="Project">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Project.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="index.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+
+
+
+
+<table width="100%" border=0 cellpadding = 50>
+<tr>
+<td>
+
+
+
+
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<HR>
+<table width="100%" border=0>
+<tr>
+<td align=left>
+
+<A NAME="tex2html141"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="index2.gif"></A>
+<A NAME="tex2html133"
+  HREF="node4.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev2.gif"></A>
+<A NAME="tex2html139"
+  HREF="index.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up2.gif"></A>
+<A NAME="tex2html143"
+  HREF="node6.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next2.gif"></A>
+</td>
+<td align=right>
+<a href="mailto:petemoore@worc0260.freeserve.co.uk"><img src="email.gif" border=0 width=56 height=30 alt="email"></a>
+<a href="http://www.worc0260.freeserve.co.uk/petemoore/maths/"><img src="home.gif" border=0 width=26 height=30 alt="home"></a>
+
+</td>
+</tr>
+</table>
+
+<HR>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html145"
+  HREF="#SECTION00510000000000000000"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Euler-Maclaurin Sum Formula</A>
+<LI><A NAME="tex2html146"
+  HREF="#SECTION00520000000000000000"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN> The Discrete Integral Expansion Formula</A>
+<LI><A NAME="tex2html147"
+  HREF="#SECTION00530000000000000000"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN> Early Results</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00500000000000000000">
+<SPAN CLASS="arabic">4</SPAN>. The Discrete Integral Expansion Formula</A>
+</H1>
+
+<P>
+The <SPAN  CLASS="textit">Discrete Integral Expansion Formula</SPAN> is a more general
+form of the <SPAN  CLASS="textit">Euler-Maclaurin Sum Formula</SPAN>.  The
+Euler-Maclaurin sum formula is essentially a formula for summing a
+function over the domain <!-- MATH
+ $\{1, 2, \ldots ,n\}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="84" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.gif"
+ ALT="$ \{1, 2, \ldots ,n\}$"></SPAN>.
+
+<P>
+The Discrete Integral Expansion Formula gives an expansion for an
+arbitrary Discrete Integral, i.e. where the sum domain is of the
+form
+<BR>
+<P>
+<DIV CLASS="centerline" ID="par6343" ALIGN="CENTER">
+ <!-- MATH
+ $\{a+uh+\frac{h}{2}, a+uh+\frac{3h}{2},
+a+uh+\frac{5h}{2}, \ldots , b+uh-\frac{3h}{2},
+b+uh-\frac{h}{2}\}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="449" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.gif"
+ ALT="$ \{a+uh+\frac{h}{2}, a+uh+\frac{3h}{2},
+a+uh+\frac{5h}{2}, \ldots , b+uh-\frac{3h}{2},
+b+uh-\frac{h}{2}\}$"></SPAN></DIV>
+
+<P>
+which gives rise to significant differences between the Discrete
+Integral Expansion Formula and the Euler-Maclaurin Formula.
+
+<P>
+
+<H1><A NAME="SECTION00510000000000000000">
+<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Euler-Maclaurin Sum Formula</A>
+</H1>
+
+<P>
+Consider an analytic function <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ f$"></SPAN>.  Then the
+<SPAN  CLASS="textit">Euler-Maclaurin Sum Formula</SPAN> states that
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+\sum_{i=1}^{n} f(i) & = & \left[ \int f(x) \,\mathrm
+d{x} + {\scriptstyle \frac{1}{2}}f(x) +
+\sum_{k=1}^m \frac{B_{2k}}{(2k)!} f^{(2k-1)}(x)
+\right]_{x=0}^{x=n} \nonumber \\
+& & + n \frac{B_{2m+2}f^{(2m+2)}(\xi)}{(2m+2)!}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="55" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.gif"
+ ALT="$\displaystyle \sum_{i=1}^{n} f(i)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="313" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.gif"
+ ALT="$\displaystyle \left[ \int f(x) \,\mathrm
+d{x} + {\scriptstyle \frac{1}{2}}f(x) +
+\sum_{k=1}^m \frac{B_{2k}}{(2k)!} f^{(2k-1)}(x)
+\right]_{x=0}^{x=n}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="143" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.gif"
+ ALT="$\displaystyle + n \frac{B_{2m+2}f^{(2m+2)}(\xi)}{(2m+2)!}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+for some <!-- MATH
+ $\xi\in(0,n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.gif"
+ ALT="$ \xi\in(0,n)$"></SPAN>, where <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.gif"
+ ALT="$ B_n$"></SPAN> is the <!-- MATH
+ $n^\text{th}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img284.gif"
+ ALT="$ n^$">th</SPAN>
+Bernoulli number (see Appendix&nbsp;<A HREF="node7.html#bnumsepols">B</A>).
+
+<P>
+
+<H1><A NAME="SECTION00520000000000000000">
+<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN> The Discrete Integral Expansion Formula</A>
+</H1>
+
+<P>
+Consider a function <!-- MATH
+ $f(x,u,h) f:\mathbb{C}^3\to\mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="138" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.gif"
+ ALT="$ f(x,u,h) f:\mathbb{C}^3\to\mathbb{C}$"></SPAN> which is
+analytic in all three variables.  Then
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\partial}{\partial u}f(x+uh) & = & hf'(x+uh) =
+\frac{\partial}{\partial x}(hf(x+uh)) \\
+& = & \frac{\partial}{\partial x} \left\{ \frac{\mathrm d}{\mathrm d_{u}^{h}{x}}
+\int hf(x+uh) \,\mathrm
+d_{u}^{h}{x} \right\} \\
+& = & \frac{\partial}{\partial x} \left\{ \frac{1}{h} \left[
+\int hf(x+{\scriptstyle \frac{1}{2}}h) \,\mathrm
+d_{u}^{h}{x} - \int hf(x-{\scriptstyle \frac{1}{2}}h) \,\mathrm
+d_{u}^{h}{x} \right] \right\} \\
+& = & \frac{\partial}{\partial x} \left\{
+\int f(x) \,\mathrm
+d_{u+{\scriptstyle \frac{1}{2}}}^{h}{x} - \int f(x) \,\mathrm
+d_{u-{\scriptstyle \frac{1}{2}}}^{h}{x} \right\} \\
+& = & \frac{\partial}{\partial_0^1 u} \left\{
+\frac{\partial}{\partial x} \left\{ \int f(x) \,\mathrm
+d_{u}^{h}{x} \right\}
+\right\}
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="91" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial u}f(x+uh)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="208" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.gif"
+ ALT="$\displaystyle hf'(x+uh) =
+\frac{\partial}{\partial x}(hf(x+uh))$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="199" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial x} \left\{ \frac{\mathrm d}{\mathrm d_{u}^{h}{x}}
+\int hf(x+uh) \,\mathrm
+d_{u}^{h}{x} \right\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="335" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img289.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial x} \left\{ \frac{1}{h} \left[
+\int hf(x+...
+... \int hf(x-{\scriptstyle \frac{1}{2}}h) \,\mathrm
+d_{u}^{h}{x} \right] \right\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="252" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img290.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial x} \left\{
+\int f(x) \,\mathrm
+d_{u+{\sc...
+...}^{h}{x} - \int f(x) \,\mathrm
+d_{u-{\scriptstyle \frac{1}{2}}}^{h}{x} \right\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="177" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img291.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial_0^1 u} \left\{
+\frac{\partial}{\partial x} \left\{ \int f(x) \,\mathrm
+d_{u}^{h}{x} \right\}
+\right\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Discretely integrating gives
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="firstmooresum"></A><!-- MATH
+ \begin{eqnarray}
+\frac{\partial}{\partial x} \left\{ \int f(x) \,\mathrm
+d_{u}^{h}{x} \right\} &
+\equiv & \frac{\partial}{\partial u} \left\{ \int f(x+uh) \,\mathrm
+d_{0}^{1}{u}
+\right\} + C
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="125" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial x} \left\{ \int f(x) \,\mathrm
+d_{u}^{h}{x} \right\}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$\displaystyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="189" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial u} \left\{ \int f(x+uh) \,\mathrm
+d_{0}^{1}{u}
+\right\} + C$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+for some constant <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img295.gif"
+ ALT="$ C$"></SPAN>.
+
+<P>
+Normally we would have an arbitrary function of two variables
+instead of a constant.  However, since we are integrating with
+pre-decided values of 0 and 1 (<!-- MATH
+ $\mathrm d_0^1u$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.gif"
+ ALT="$ \mathrm d_0^1u$"></SPAN>), it is only a
+constant, and as such is independent of <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.gif"
+ ALT="$ x,u,h$"></SPAN>.
+
+<P>
+Since this constant is independent of <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ h$"></SPAN>, let us consider
+(<A HREF="node5.html#firstmooresum">4.2</A>) for the case <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.gif"
+ ALT="$ h=0 $"></SPAN>.
+
+<P>
+We get
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\partial}{\partial x} \left\{ \int f(x) \,\mathrm
+d{x} \right\} & = &
+\frac{\partial}{\partial u} \left\{ \int f(x) \,\mathrm
+d_{0}^{1}{u} \right\} +
+C,
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="117" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial x} \left\{ \int f(x) \,\mathrm
+d{x} \right\}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="157" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial u} \left\{ \int f(x) \,\mathrm
+d_{0}^{1}{u} \right\} +
+C,$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+giving
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+f(x) & = & f(x) \frac{\partial}{\partial u}(u+c_1) + C \\
+& = & f(x) + C.
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img300.gif"
+ ALT="$\displaystyle f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="137" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img301.gif"
+ ALT="$\displaystyle f(x) \frac{\partial}{\partial u}(u+c_1) + C$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="68" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.gif"
+ ALT="$\displaystyle f(x) + C.$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Thus <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img303.gif"
+ ALT="$ C\equiv0$"></SPAN>. Hence we can rewrite (<A HREF="node5.html#firstmooresum">4.2</A>) as
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="secondmooresum"></A><!-- MATH
+ \begin{eqnarray}
+\frac{\partial}{\partial x} \left\{ \int f(x) \,\mathrm
+d_{u}^{h}{x} \right\} &
+\equiv & \frac{\partial}{\partial u} \left\{ \int f(x+uh) \,\mathrm
+d_{0}^{1}{u}
+\right\}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="125" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial x} \left\{ \int f(x) \,\mathrm
+d_{u}^{h}{x} \right\}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$\displaystyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="159" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial u} \left\{ \int f(x+uh) \,\mathrm
+d_{0}^{1}{u}
+\right\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Although this does not look like the Euler-Maclaurin Expansion, it
+can be manipulated to be of the same form.  However, this version
+of the formula is the simplest and perhaps the more elegant.
+
+<P>
+Before continuing, let us consider other virtues of this identity.
+
+<P>
+Essentially we have something of the form
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+\frac{\partial}{\partial x}f_1(x,u) & \equiv &
+\frac{\partial}{\partial u}f_2(x,u).
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="75" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img305.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial x}f_1(x,u)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$\displaystyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="80" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img306.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial u}f_2(x,u).$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Had it also been the case that
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+\frac{\partial}{\partial u}f_1(x,u) & \equiv & -
+\frac{\partial}{\partial x}f_2(x,u),
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="75" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img307.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial u}f_1(x,u)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$\displaystyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="91" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img308.gif"
+ ALT="$\displaystyle -
+\frac{\partial}{\partial x}f_2(x,u),$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+then we would have had a spectacular result.  We would have been
+able to engineer the function
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+f_1(x,u) + if_2(x,u)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="127" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.gif"
+ ALT="$\displaystyle f_1(x,u) + if_2(x,u)$">
+</DIV><P></P>
+
+<P>
+which would have been analytic on <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.gif"
+ ALT="$ x+iu$"></SPAN>.  Sadly though, this
+identity does not hold.  Maybe a variation does.  It is certainly
+something worth investigating!
+
+<P>
+Let's now go back to considering (<A HREF="node5.html#secondmooresum">4.3</A>).
+
+<P>
+Integrating both sides with respect to <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ x$"></SPAN> we get
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\int f(x) \,\mathrm
+d_{u}^{h}{x} & \equiv & \int \frac{\partial}{\partial u}
+\left\{ \int f(x+uh) \,\mathrm
+d_{0}^{1}{u} \right\} \,\mathrm
+d{x} \\
+& \equiv & \int \frac{\partial}{\partial u}
+\left\{ \int \left\{ f(x)+(uh)f'(x)+\frac{(uh)^2}{2!}f''(x)
++ \ldots \right\} \,\mathrm
+d_{0}^{1}{u} \right\} \,\mathrm
+d{x} \\
+& \equiv & \int \frac{\partial}{\partial u} \left\{
+\int \left\{ f(x)+(uh)f'(x)+\frac{(uh)^2}{2!}f''(x)
++ \ldots \right\} \,\mathrm
+d{x} \right\} \,\mathrm
+d_{0}^{1}{u} \\
+& \equiv & \frac{\partial}{\partial u} \bigg\{ \left( \int 1 \,\mathrm
+d_{0}^{1}{u}
+\right) \int f(x) \,\mathrm
+d{x} + \left( \int u \,\mathrm
+d_{0}^{1}{u} \right) hf(x) \\
+& & + \left( \int u^2 \,\mathrm
+d_{0}^{1}{u} \right) \frac{h^2}{2!}f'(x) + \left(
+\int u^3 \,\mathrm
+d_{0}^{1}{u} \right) \frac{h^3}{3!}f''(x) + \ldots \bigg\} \\
+& \equiv & \int f(x) \,\mathrm
+d{x} + \frac{\mathrm d}{\mathrm d{u}} \left( \int u \,\mathrm
+d_{0}^{1}{u} \right)
+hf(x) + \frac{\mathrm d}{\mathrm d{u}} \left( \int u^2 \,\mathrm
+d_{0}^{1}{u} \right) \frac{h^2}{2!}
+f'(x) \\
+& & + \frac{\mathrm d}{\mathrm d{u}} \left( \int u^3 \,\mathrm
+d_{0}^{1}{u} \right) \frac{h^3}{3!}
+f''(x) + \frac{\mathrm d}{\mathrm d{u}} \left( \int u^4 \,\mathrm
+d_{0}^{1}{u} \right) \frac{h^4}{4!}
+f'''(x)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="79" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img311.gif"
+ ALT="$\displaystyle \int f(x) \,\mathrm
+d_{u}^{h}{x}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$\displaystyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="198" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img312.gif"
+ ALT="$\displaystyle \int \frac{\partial}{\partial u}
+\left\{ \int f(x+uh) \,\mathrm
+d_{0}^{1}{u} \right\} \,\mathrm
+d{x}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$\displaystyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="398" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$\displaystyle \int \frac{\partial}{\partial u}
+\left\{ \int \left\{ f(x)+(uh)f'...
+...)^2}{2!}f''(x)
++ \ldots \right\} \,\mathrm
+d_{0}^{1}{u} \right\} \,\mathrm
+d{x}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$\displaystyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="398" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$\displaystyle \int \frac{\partial}{\partial u} \left\{
+\int \left\{ f(x)+(uh)f'...
+...)^2}{2!}f''(x)
++ \ldots \right\} \,\mathrm
+d{x} \right\} \,\mathrm
+d_{0}^{1}{u}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$\displaystyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="314" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img315.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial u} \bigg\{ \left( \int 1 \,\mathrm
+d_{0}...
+...) \int f(x) \,\mathrm
+d{x} + \left( \int u \,\mathrm
+d_{0}^{1}{u} \right) hf(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="361" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.gif"
+ ALT="$\displaystyle + \left( \int u^2 \,\mathrm
+d_{0}^{1}{u} \right) \frac{h^2}{2!}f'...
+...(
+\int u^3 \,\mathrm
+d_{0}^{1}{u} \right) \frac{h^3}{3!}f''(x) + \ldots \bigg\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$\displaystyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="403" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img317.gif"
+ ALT="$\displaystyle \int f(x) \,\mathrm
+d{x} + \frac{\mathrm d}{\mathrm d{u}} \left( ...
+...athrm d{u}} \left( \int u^2 \,\mathrm
+d_{0}^{1}{u} \right) \frac{h^2}{2!}
+f'(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="362" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img318.gif"
+ ALT="$\displaystyle + \frac{\mathrm d}{\mathrm d{u}} \left( \int u^3 \,\mathrm
+d_{0}^...
+...hrm d{u}} \left( \int u^4 \,\mathrm
+d_{0}^{1}{u} \right) \frac{h^4}{4!}
+f'''(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+We can write this more elegantly as
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="finalmoore"></A><!-- MATH
+ \begin{eqnarray}
+\int f(x) \,\mathrm
+d_{u}^{h}{x} & \equiv & \int f(x) \,\mathrm
+d{x} + e_1(u)hf(x) +
+e_2(u)h^2f'(x) \nonumber \\
+& & +\:e_3(u)h^3f''(x) + \ldots,\\
+\nonumber \\
+\text{where } e_n(u) & = & \frac{1}{n!} \frac{\mathrm d}{\mathrm d{u}} \left(
+\int u^n \,\mathrm
+d_{0}^{1}{u} \right).
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="79" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img311.gif"
+ ALT="$\displaystyle \int f(x) \,\mathrm
+d_{u}^{h}{x}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$\displaystyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="261" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img319.gif"
+ ALT="$\displaystyle \int f(x) \,\mathrm
+d{x} + e_1(u)hf(x) +
+e_2(u)h^2f'(x)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="148" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.gif"
+ ALT="$\displaystyle +\:e_3(u)h^3f''(x) + \ldots,$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">where <IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img321.gif"
+ ALT="$\displaystyle e_n(u)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="134" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.gif"
+ ALT="$\displaystyle \frac{1}{n!} \frac{\mathrm d}{\mathrm d{u}} \left(
+\int u^n \,\mathrm
+d_{0}^{1}{u} \right).$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The Euler-Maclaurin Formula can be deduced from (<A HREF="node5.html#finalmoore">4.6</A>)
+by letting <!-- MATH
+ $u={\scriptstyle \frac{1}{2}}, h=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.gif"
+ ALT="$ u={\scriptstyle \frac{1}{2}}, h=1$"></SPAN> and evaluating the whole expression
+between values <SPAN CLASS="MATH">0</SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ n$"></SPAN>.
+
+<P>
+Please see Appendix&nbsp;<A HREF="node6.html#mooresumapdx">A</A> to see the first few terms
+of this expression.  Appendix&nbsp;<A HREF="node7.html#bnumsepols">B</A> lists the first few
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img324.gif"
+ ALT="$ e_i(u)$"></SPAN> polynomials.
+
+<P>
+
+<H1><A NAME="SECTION00530000000000000000">
+<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN> Early Results</A>
+</H1>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN></B> &nbsp;
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+e_i(u) & = & \frac{B_n(x-{\scriptstyle \frac{1}{2}})}{n!}
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.gif"
+ ALT="$\displaystyle e_i(u)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="75" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.gif"
+ ALT="$\displaystyle \frac{B_n(x-{\scriptstyle \frac{1}{2}})}{n!}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.gif"
+ ALT="$ B_n$"></SPAN> is the <!-- MATH
+ $n^\text{th}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img284.gif"
+ ALT="$ n^$">th</SPAN> <SPAN  CLASS="textit">Bernoulli Polynomial</SPAN>.</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN></B> &nbsp;
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\zeta(x) & = & \int\limits_{0}^{\infty} w^{-x} \,\mathrm
+d_{{\scriptstyle \frac{1}{2}}}^{1}{w}
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.gif"
+ ALT="$\displaystyle \zeta(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="82" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.gif"
+ ALT="$\displaystyle \int\limits_{0}^{\infty} w^{-x} \,\mathrm
+d_{{\scriptstyle \frac{1}{2}}}^{1}{w}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.gif"
+ ALT="$ \zeta(x)$"></SPAN> is the <SPAN  CLASS="textit">Riemann Zeta Function</SPAN>.</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN></B> &nbsp;
+If <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.gif"
+ ALT="$ p$"></SPAN> is rational, then so too is <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ e_i(p)$"></SPAN>.</DIV><P></P>
+
+<P>
+And here is a list of further results ...
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+e_i(0) & = & 0 \quad \forall i\in\{1,3,5,7,\ldots\} \\
+e_i({\scriptstyle \frac{1}{2}}) & = & 0 \quad \forall i\in\{3,5,7,9,\ldots\} \\
+\frac{\mathrm d}{\mathrm d{u}}e_n(u) & = & e_{n-1}(u) \\
+e_i(u) & = & (-1)^i e_i(-u) \\
+e_i({\scriptstyle \frac{1}{2}}) & = & \left( \frac{-2^{i-1}}{2^{i-1}-1} \right)
+e_i(0),\quad i\neq1 \\
+e_i({\scriptstyle \frac{1}{3}}) & = & -\frac{1}{2} \left( \frac{3^{i-1}-1}{3^{i-1}}
+\right)
+e_i(0),\quad i\in\{2,4,6,8,\ldots\} \\
+e_n({\scriptstyle \frac{1}{2}}) & = & \frac{B_n}{n!} \\
+e_n(u) & = & e_n(a) + (u-a)e_{n-1}(a) +
+\frac{(u-a)^2}{2!}e_{n-2}(a) \nonumber \\
+& & + \ldots + \frac{(u-a)^n}{n!}e_0(a) \\
+{\scriptstyle \frac{1}{2}}e_n({\scriptstyle \frac{1}{2}}) & = & \mathbf{Re} \left\{ \sum_{r=1}^\infty
+\frac{-1}{(2\pi ir)^n} \right\} \\
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) & = & \frac{\mathrm d}{\mathrm d_{0}^{1}{u}} \left[ u.\frac{\mathrm d}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{uh}{x}} f(x) \right] \\
+\frac{e_r(un)}{n^r} & = & \int\limits_{-{\scriptstyle \frac{1}{2}}}^{{\scriptstyle \frac{1}{2}}} e_r(x) \,\mathrm
+d_{u}^{1/n}{x} \\
+\frac{e_r(0)}{n^r} & = & \frac{1}{n} \sum_{i=1}^n e_r \left(
+-{\scriptstyle \frac{1}{2}}+(i-{\scriptstyle \frac{1}{2}})/n \right)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img332.gif"
+ ALT="$\displaystyle e_i(0)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="148" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img333.gif"
+ ALT="$\displaystyle 0 \quad \forall i\in\{1,3,5,7,\ldots\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.gif"
+ ALT="$\displaystyle e_i({\scriptstyle \frac{1}{2}})$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="148" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.gif"
+ ALT="$\displaystyle 0 \quad \forall i\in\{3,5,7,9,\ldots\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="61" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d{u}}e_n(u)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.gif"
+ ALT="$\displaystyle e_{n-1}(u)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.gif"
+ ALT="$\displaystyle e_i(u)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="84" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.gif"
+ ALT="$\displaystyle (-1)^i e_i(-u)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.gif"
+ ALT="$\displaystyle e_i({\scriptstyle \frac{1}{2}})$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="172" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.gif"
+ ALT="$\displaystyle \left( \frac{-2^{i-1}}{2^{i-1}-1} \right)
+e_i(0),\quad i\neq1$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.gif"
+ ALT="$\displaystyle e_i({\scriptstyle \frac{1}{3}})$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="277" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.gif"
+ ALT="$\displaystyle -\frac{1}{2} \left( \frac{3^{i-1}-1}{3^{i-1}}
+\right)
+e_i(0),\quad i\in\{2,4,6,8,\ldots\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.gif"
+ ALT="$\displaystyle e_n({\scriptstyle \frac{1}{2}})$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="28" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.gif"
+ ALT="$\displaystyle \frac{B_n}{n!}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img321.gif"
+ ALT="$\displaystyle e_n(u)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="279" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.gif"
+ ALT="$\displaystyle e_n(a) + (u-a)e_{n-1}(a) +
+\frac{(u-a)^2}{2!}e_{n-2}(a)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="146" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.gif"
+ ALT="$\displaystyle + \ldots + \frac{(u-a)^n}{n!}e_0(a)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.gif"
+ ALT="$\displaystyle {\scriptstyle \frac{1}{2}}e_n({\scriptstyle \frac{1}{2}})$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="129" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img347.gif"
+ ALT="$\displaystyle \mathbf{Re} \left\{ \sum_{r=1}^\infty
+\frac{-1}{(2\pi ir)^n} \right\}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="62" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="129" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{0}^{1}{u}} \left[ u.\frac{\mathrm d}{\mathrm d_{{\scriptstyle \frac{1}{2}}}^{uh}{x}} f(x) \right]$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="51" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.gif"
+ ALT="$\displaystyle \frac{e_r(un)}{n^r}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="99" HEIGHT="82" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.gif"
+ ALT="$\displaystyle \int\limits_{-{\scriptstyle \frac{1}{2}}}^{{\scriptstyle \frac{1}{2}}} e_r(x) \,\mathrm
+d_{u}^{1/n}{x}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="41" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.gif"
+ ALT="$\displaystyle \frac{e_r(0)}{n^r}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="171" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.gif"
+ ALT="$\displaystyle \frac{1}{n} \sum_{i=1}^n e_r \left(
+-{\scriptstyle \frac{1}{2}}+(i-{\scriptstyle \frac{1}{2}})/n \right)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<HR>
+<table width="100%" border=0>
+<tr>
+<td align=left>
+
+<A NAME="tex2html141"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="index2.gif"></A>
+<A NAME="tex2html133"
+  HREF="node4.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev2.gif"></A>
+<A NAME="tex2html139"
+  HREF="index.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up2.gif"></A>
+<A NAME="tex2html143"
+  HREF="node6.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next2.gif"></A>
+</td>
+<td align=right>
+<a href="mailto:petemoore@worc0260.freeserve.co.uk"><img src="email.gif" border=0 width=56 height=30 alt="email"></a>
+<a href="http://www.worc0260.freeserve.co.uk/petemoore/maths/"><img src="home.gif" border=0 width=26 height=30 alt="home"></a>
+
+</td>
+</tr>
+</table>
+
+<HR>
+</DIV>
+<!--End of Navigation Panel-->
+&copy; <A HREF="mailto:petemoore@worc0260.freeserve.co.uk">Pete Moore<A> April 2001
+
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+</BODY>
+</HTML>

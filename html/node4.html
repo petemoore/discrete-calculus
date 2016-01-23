@@ -1,0 +1,901 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3. The Discrete Integral</TITLE>
+<META NAME="description" CONTENT="3. The Discrete Integral">
+<META NAME="keywords" CONTENT="Project">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Project.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="index.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+
+
+
+
+<table width="100%" border=0 cellpadding = 50>
+<tr>
+<td>
+
+
+
+
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<HR>
+<table width="100%" border=0>
+<tr>
+<td align=left>
+
+<A NAME="tex2html122"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="index2.gif"></A>
+<A NAME="tex2html114"
+  HREF="node3.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev2.gif"></A>
+<A NAME="tex2html120"
+  HREF="index.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up2.gif"></A>
+<A NAME="tex2html124"
+  HREF="node5.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next2.gif"></A>
+</td>
+<td align=right>
+<a href="mailto:petemoore@worc0260.freeserve.co.uk"><img src="email.gif" border=0 width=56 height=30 alt="email"></a>
+<a href="http://www.worc0260.freeserve.co.uk/petemoore/maths/"><img src="home.gif" border=0 width=26 height=30 alt="home"></a>
+
+</td>
+</tr>
+</table>
+
+<HR>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html126"
+  HREF="#SECTION00410000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Partial Discrete Derivative</A>
+<LI><A NAME="tex2html127"
+  HREF="#SECTION00420000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN> The Indefinite Discrete Integral</A>
+<UL>
+<LI><A NAME="tex2html128"
+  HREF="#SECTION00421000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Indefinite Discrete Integral</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html129"
+  HREF="#SECTION00430000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN> The Definite Discrete Integral</A>
+<UL>
+<LI><A NAME="tex2html130"
+  HREF="#SECTION00431000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Definite Discrete Integral</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html131"
+  HREF="#SECTION00440000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN> Theorems involving the Discrete Integral</A>
+<LI><A NAME="tex2html132"
+  HREF="#SECTION00450000000000000000"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN> Some Standard Discrete Integrals</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00400000000000000000">
+<SPAN CLASS="arabic">3</SPAN>. The Discrete Integral</A>
+</H1>
+
+<P>
+
+<H1><A NAME="SECTION00410000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Partial Discrete Derivative</A>
+</H1>
+
+<P>
+Before introducing the Discrete Integral, we must first define a
+certain type of <SPAN  CLASS="textit">Partial Discrete Derivative</SPAN> which will play
+a fundamental role in defining the Discrete Integral.
+
+<P>
+<P>
+<DIV><B>Definition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN></B> &nbsp;
+Consider a function of three complex variables <SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ f(x,u,h)$"></SPAN> which
+for any fixed pair <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ u, h$"></SPAN> is analytic on <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ x$"></SPAN>.  Then the
+<SPAN  CLASS="textit">Partial Discrete Derivative</SPAN> of <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.gif"
+ ALT="$ f(x) $"></SPAN> is defined as
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\frac{\partial}{\partial_u^hx}f(x,u,h) \:\stackrel{\mathrm{def}}{=}\:
+\frac{f(x+({\scriptstyle \frac{1}{2}}-u)h,u,h) - f(x+(-{\scriptstyle \frac{1}{2}}-u)h,u,h)}{h}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="429" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img239.gif"
+ ALT="$\displaystyle \frac{\partial}{\partial_u^hx}f(x,u,h) \:\stackrel{\mathrm{def}}{...
+...ptstyle \frac{1}{2}}-u)h,u,h) - f(x+(-{\scriptstyle \frac{1}{2}}-u)h,u,h)}{h}. $">
+</DIV><P></P>
+
+<P>
+</DIV><P></P>
+
+<P>
+This does not define the <SPAN  CLASS="textit">Partial Discrete Derivative</SPAN> in
+general.
+
+<P>
+
+<H1><A NAME="SECTION00420000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN> The Indefinite Discrete Integral</A>
+</H1>
+
+<P>
+<P>
+<DIV><B>Definition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN></B> &nbsp;
+If we have a function <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img240.gif"
+ ALT="$ g(x)$"></SPAN> such that
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+g(x) = \frac{\partial}{\partial_u^hx} f(x,u,h)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="141" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img241.gif"
+ ALT="$\displaystyle g(x) = \frac{\partial}{\partial_u^hx} f(x,u,h) $">
+</DIV><P></P>
+
+<P>
+for some function <SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ f(x,u,h)$"></SPAN> then we call <SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ f(x,u,h)$"></SPAN> an
+<SPAN  CLASS="textit">Indefinite Discrete Integral</SPAN> of <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img240.gif"
+ ALT="$ g(x)$"></SPAN> and write
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\int g(x) \,\mathrm
+d_{u}^{h}{x} \:\stackrel{\mathrm{def}}{=}\:f(x,u,h).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="173" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img242.gif"
+ ALT="$\displaystyle \int g(x) \,\mathrm
+d_{u}^{h}{x} \:\stackrel{\mathrm{def}}{=}\:f(x,u,h). $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00421000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Indefinite Discrete Integral</A>
+</H2>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN></B> &nbsp;
+If <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.gif"
+ ALT="$ f_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img244.gif"
+ ALT="$ f_2$"></SPAN> are both Indefinite Discrete Integrals of a
+function <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ g$"></SPAN>, then <SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.gif"
+ ALT="$ f_1 - f_2$"></SPAN> is a function of <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ u$"></SPAN> and
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ h$"></SPAN> only.</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN></B> &nbsp;
+All analytic functions have Indefinite Discrete Integrals.</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\int g(x) \,\mathrm
+d_{u}^{0}{x} = \int g(x) \,\mathrm
+d{x}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="162" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.gif"
+ ALT="$\displaystyle \int g(x) \,\mathrm
+d_{u}^{0}{x} = \int g(x) \,\mathrm
+d{x} $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+
+For the Discrete Integral to exist, there must be some function
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ f$"></SPAN> which the Discrete Integral is equal to, such that
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+g(x) = \frac{\partial}{\partial_u^0x} f(x) = \frac{\mathrm d}{\mathrm d{x}}f(x).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="183" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.gif"
+ ALT="$\displaystyle g(x) = \frac{\partial}{\partial_u^0x} f(x) = \frac{\mathrm d}{\mathrm d{x}}f(x). $">
+</DIV><P></P>
+Therefore
+<!-- MATH
+ \begin{displaymath}
+f(x) = \int g(x) \,\mathrm
+d_{u}^{0}{x} = \int g(x) \,\mathrm
+d{x}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="211" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.gif"
+ ALT="$\displaystyle f(x) = \int g(x) \,\mathrm
+d_{u}^{0}{x} = \int g(x) \,\mathrm
+d{x} $">
+</DIV><P></P> <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\int f(x) \,\mathrm
+d_{u}^{h}{x} = \int f(x+uh) \,\mathrm
+d_{0}^{h}{x}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="208" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.gif"
+ ALT="$\displaystyle \int f(x) \,\mathrm
+d_{u}^{h}{x} = \int f(x+uh) \,\mathrm
+d_{0}^{h}{x} $">
+</DIV><P></P>
+<A NAME="dint0prop"></A></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\int f(x) \,\mathrm
+d_{u}^{h}{x} = \int f(x) \,\mathrm
+d_{-u}^{-h}{x}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="182" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.gif"
+ ALT="$\displaystyle \int f(x) \,\mathrm
+d_{u}^{h}{x} = \int f(x) \,\mathrm
+d_{-u}^{-h}{x} $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \int f(x) \,\mathrm
+d_{u}^{h}{x} = f(x)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="159" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.gif"
+ ALT="$\displaystyle \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} \int f(x) \,\mathrm
+d_{u}^{h}{x} = f(x) $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">7</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\int \lambda f(x)+\mu g(x) \,\mathrm
+d_{u}^{h}{x} = \lambda \int f(x) \,\mathrm
+d_{u}^{h}{x}
++ \mu \int g(x) \,\mathrm
+d_{u}^{h}{x}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="350" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.gif"
+ ALT="$\displaystyle \int \lambda f(x)+\mu g(x) \,\mathrm
+d_{u}^{h}{x} = \lambda \int f(x) \,\mathrm
+d_{u}^{h}{x}
++ \mu \int g(x) \,\mathrm
+d_{u}^{h}{x} $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">8</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\int \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) \,\mathrm
+d_{u}^{h}{x} = \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \int f(x) \,\mathrm
+d_{u}^{h}{x} + A(u,h)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="306" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.gif"
+ ALT="$\displaystyle \int \frac{\mathrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} f(x) \,\mathr...
+...thrm d^{i}}{\mathrm d_{u}^{h}{x}^{i}} \int f(x) \,\mathrm
+d_{u}^{h}{x} + A(u,h)$">
+</DIV><P></P></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">9</SPAN></B> &nbsp;
+The Centered (i.e. with <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ u=0$"></SPAN>) Discrete Integral of an odd
+function is an even function, and vice versa.</DIV><P></P>
+
+<P>
+<P></P>
+<DIV><I>Proof</I>.
+
+Follows from Proposition&nbsp;<A HREF="node3.html#oddevenprop">2.8</A>.
+ <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \qedsymbol$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">10</SPAN></B> &nbsp;
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\int f(\alpha x) \,\mathrm
+d_{u}^{h}{x} & = & \frac{1}{\alpha} \int f(x) \,\mathrm
+d_{u}^{\alpha h}{(\alpha x)}
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="88" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img254.gif"
+ ALT="$\displaystyle \int f(\alpha x) \,\mathrm
+d_{u}^{h}{x}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="123" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img255.gif"
+ ALT="$\displaystyle \frac{1}{\alpha} \int f(x) \,\mathrm
+d_{u}^{\alpha h}{(\alpha x)}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">11</SPAN></B> &nbsp;
+Given that <!-- MATH
+ $(x_1,u_1,h_1)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="76" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.gif"
+ ALT="$ (x_1,u_1,h_1)$"></SPAN> are independent of each other, and
+<!-- MATH
+ $(x_2,u_2,h_2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="76" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.gif"
+ ALT="$ (x_2,u_2,h_2)$"></SPAN> are independent of each other, then
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\int \int f(x_2) \,\mathrm
+d_{u_2}^{h_2}{x_2} \,\mathrm
+d_{u_1}^{h_1}{x_1} =
+\int \int f(x_1) \,\mathrm
+d_{u_1}^{h_1}{x_1} \,\mathrm
+d_{u_2}^{h_2}{x_2}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="325" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img258.gif"
+ ALT="$\displaystyle \int \int f(x_2) \,\mathrm
+d_{u_2}^{h_2}{x_2} \,\mathrm
+d_{u_1}^{...
+...} =
+\int \int f(x_1) \,\mathrm
+d_{u_1}^{h_1}{x_1} \,\mathrm
+d_{u_2}^{h_2}{x_2} $">
+</DIV><P></P>
+
+<P>
+even if <!-- MATH
+ $(x_1,u_1,h_1,x_2,u_2,h_2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="142" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.gif"
+ ALT="$ (x_1,u_1,h_1,x_2,u_2,h_2)$"></SPAN> are not independent of each
+other in general.</DIV><P></P>
+
+<P>
+
+<H1><A NAME="SECTION00430000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN> The Definite Discrete Integral</A>
+</H1>
+
+<P>
+<P>
+<DIV><B>Definition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN></B> &nbsp;
+If a function has an Indefinite Discrete Integral, then the
+Definite Discrete Integral of the function between <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img192.gif"
+ ALT="$ a$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img260.gif"
+ ALT="$ b$"></SPAN>
+is defined as
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\int\limits_{a}^{b} g(x) \,\mathrm
+d_{u}^{h}{x} \:\stackrel{\mathrm{def}}{=}\:f(b,u,h)-f(a,u,h).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="248" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$\displaystyle \int\limits_{a}^{b} g(x) \,\mathrm
+d_{u}^{h}{x} \:\stackrel{\mathrm{def}}{=}\:f(b,u,h)-f(a,u,h). $">
+</DIV><P></P>
+
+<P>
+</DIV><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00431000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> Properties of the Definite Discrete Integral</A>
+</H2>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">12</SPAN></B> &nbsp;
+The Definite Discrete Integral of a function is <SPAN  CLASS="textit">unique</SPAN>.</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">13</SPAN></B> &nbsp;
+Consider a complex function <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ g$"></SPAN> which has a Discrete Integral,
+together with constants <!-- MATH
+ $a,b,u,h\in\mathbb{C},h\neq 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="128" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.gif"
+ ALT="$ a,b,u,h\in\mathbb{C},h\neq 0$"></SPAN>, such that
+<SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img263.gif"
+ ALT="$ b-a=nh$"></SPAN> for some <!-- MATH
+ $n\in\mathbb{Z}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img264.gif"
+ ALT="$ n\in\mathbb{Z}$"></SPAN>. Then
+<!-- MATH
+ \begin{displaymath}
+\int\limits_{a}^{b} g(x) \,\mathrm
+d_{u}^{h}{x} = \left\{
+\begin{array}{ll}
+0 & \frac{b-a}{h} = 0 \\
+h\sum\limits_{i=1}^{\frac{b-a}{h}}f(a+(u+i-{\scriptstyle \frac{1}{2}})h) & \frac{b-a}{h} > 0 \\
+-h\sum\limits_{i=1}^{\frac{a-b}{h}}f(b+(u+i-{\scriptstyle \frac{1}{2}})h) &
+\frac{b-a}{h} < 0
+\end{array}
+\right.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="351" HEIGHT="121" BORDER="0"
+ SRC="img265.gif"
+ ALT="\begin{displaymath}\int\limits_{a}^{b} g(x) \,\mathrm
+d_{u}^{h}{x} = \left\{
+\be...
+...ptstyle \frac{1}{2}})h) &amp;
+\frac{b-a}{h} &lt; 0
+\end{array}\right.
+\end{displaymath}">
+</DIV><P></P></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">14</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\int\limits_{a}^{b} f(x) \,\mathrm
+d_{u}^{h}{x} = - \int\limits_{b}^{a} f(x) \,\mathrm
+d_{u}^{h}{x}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="187" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img266.gif"
+ ALT="$\displaystyle \int\limits_{a}^{b} f(x) \,\mathrm
+d_{u}^{h}{x} = - \int\limits_{b}^{a} f(x) \,\mathrm
+d_{u}^{h}{x} $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">15</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\int\limits_{a}^{b} f(x) \,\mathrm
+d_{u}^{h}{x} + \int\limits_{b}^{c} f(x) \,\mathrm
+d_{u}^{h}{x} = \int\limits_{a}^{c} f(x) \,\mathrm
+d_{u}^{h}{x}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="264" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.gif"
+ ALT="$\displaystyle \int\limits_{a}^{b} f(x) \,\mathrm
+d_{u}^{h}{x} + \int\limits_{b}...
+... f(x) \,\mathrm
+d_{u}^{h}{x} = \int\limits_{a}^{c} f(x) \,\mathrm
+d_{u}^{h}{x} $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Proposition  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">16</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\int\limits_{a}^{b} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) \,\mathrm
+d_{u}^{h}{x} = f(b) - f(a)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="201" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.gif"
+ ALT="$\displaystyle \int\limits_{a}^{b} \frac{\mathrm d}{\mathrm d_{u}^{h}{x}} f(x) \,\mathrm
+d_{u}^{h}{x} = f(b) - f(a) $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+
+<H1><A NAME="SECTION00440000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN> Theorems involving the Discrete Integral</A>
+</H1>
+
+<P>
+<P>
+<DIV><B>Theorem  <SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN></B> &nbsp;
+<!-- MATH
+ \begin{displaymath}
+\int f(x) \,\mathrm
+d_{un}^{h/n}{x} = \int\limits_{-{\scriptstyle \frac{1}{2}}}^{{\scriptstyle \frac{1}{2}}} \mathbf{E}^{ih}
+\int f(x) \,\mathrm
+d_{u}^{h}{x} \,\mathrm
+d_{0}^{1/n}{i}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="268" HEIGHT="82" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.gif"
+ ALT="$\displaystyle \int f(x) \,\mathrm
+d_{un}^{h/n}{x} = \int\limits_{-{\scriptstyle...
+...2}}} \mathbf{E}^{ih}
+\int f(x) \,\mathrm
+d_{u}^{h}{x} \,\mathrm
+d_{0}^{1/n}{i} $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+For example, if we consider <SPAN CLASS="MATH"><IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.gif"
+ ALT="$ n=3,u=0$"></SPAN> we get
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray*}
+\int f(x) \,\mathrm
+d_{0}^{h/3}{x} & = & \int\limits_{-{\scriptstyle \frac{1}{2}}}^{{\scriptstyle \frac{1}{2}}} \mathbf{E}^{ih}
+\int f(x) \,\mathrm
+d_{0}^{h}{x} \,\mathrm
+d_{0}^{1/3}{i} \\
+& = & \mathbf{E}^{-{\scriptstyle \frac{1}{3}}h}\int f(x) \,\mathrm
+d_{0}^{h}{x} + \mathbf{E}^{0}\int f(x) \,\mathrm
+d_{0}^{h}{x} +
+\mathbf{E}^{{\scriptstyle \frac{1}{3}}h}\int f(x) \,\mathrm
+d_{0}^{h}{x} \\
+& = & (\mathbf{E}^{-{\scriptstyle \frac{1}{3}}h} + \mathbf{E}^0 + \mathbf{E}^{{\scriptstyle \frac{1}{3}}h})\int f(x) \,\mathrm
+d_{0}^{h}{x}
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="91" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.gif"
+ ALT="$\displaystyle \int f(x) \,\mathrm
+d_{0}^{h/3}{x}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="160" HEIGHT="82" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.gif"
+ ALT="$\displaystyle \int\limits_{-{\scriptstyle \frac{1}{2}}}^{{\scriptstyle \frac{1}{2}}} \mathbf{E}^{ih}
+\int f(x) \,\mathrm
+d_{0}^{h}{x} \,\mathrm
+d_{0}^{1/3}{i}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="353" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.gif"
+ ALT="$\displaystyle \mathbf{E}^{-{\scriptstyle \frac{1}{3}}h}\int f(x) \,\mathrm
+d_{0...
+...}{x} +
+\mathbf{E}^{{\scriptstyle \frac{1}{3}}h}\int f(x) \,\mathrm
+d_{0}^{h}{x}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="212" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.gif"
+ ALT="$\displaystyle (\mathbf{E}^{-{\scriptstyle \frac{1}{3}}h} + \mathbf{E}^0 + \mathbf{E}^{{\scriptstyle \frac{1}{3}}h})\int f(x) \,\mathrm
+d_{0}^{h}{x}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H1><A NAME="SECTION00450000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN> Some Standard Discrete Integrals</A>
+</H1>
+
+<P>
+It is only necessary to tabulate Discrete Integrals with <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ u=0$"></SPAN>.
+The more general derivative can be found by substituting <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ x$"></SPAN>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.gif"
+ ALT="$ x+uh$"></SPAN> (see Proposition&nbsp;<A HREF="node4.html#dint0prop">3.4</A>).
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+\renewedcommand{arraystretch}{2.5}\begin{array}[t]{|r|l|}
+\hline \qquad f(x) & \displaystyle \int f(x) \,\mathrm
+d_{0}^{h}{x}
+\\[2ex]
+\hline \hline
+c\in\mathbb{C}& cx \\
+\hline
+x & \frac{1}{2}x^2 \\
+x^2 & \frac{1}{3}x^3 - \frac{1}{12}h^2x \\
+x^3 & \frac{1}{4}x^4 - \frac{1}{8}h^2x^2 \\
+x^4 & \frac{1}{5}x^5 - \frac{1}{6}h^2x^3 + \frac{7}{240}h^4x \\
+x^5 & \frac{1}{6}x^6 - \frac{5}{24}h^2x^4 + \frac{7}{96}h^4x^2 \\
+x^6 & \frac{1}{7}x^7 - \frac{1}{4}h^2x^5 + \frac{7}{48}h^4x^3 \\
+    & - \frac{31}{1344}h^6x \\
+\hline
+\end{array}
+\quad
+\begin{array}[t]{|r|l|}
+\hline \qquad f(x) & \displaystyle \int f(x) \,\mathrm
+d_{0}^{h}{x}
+\\[2ex]
+\hline \hline
+a^x & \frac{\displaystyle (h/2)}{\displaystyle \sinh\{(h/2)\ln a\}}\:a^x \\
+\hline
+\mathrm e^x & \frac{\displaystyle (h/2)}{\displaystyle \sinh(h/2)}\:\mathrm e^x \\
+\mathrm e^{ix} & \frac{\displaystyle (h/2)}{\displaystyle i\sin(h/2)}\:\mathrm e^{ix} \\
+\hline
+\cos x & \frac{\displaystyle (h/2)}{\displaystyle \sin(h/2)}\:\sin x \\
+\sin x & -\frac{\displaystyle (h/2)}{\displaystyle \sin(h/2)}\:\cos x \\
+\hline
+\cos^2 x & \frac{\displaystyle x}{\displaystyle 2}+\frac{\displaystyle h}{\displaystyle \sin h}.\frac{\displaystyle \sin 2x}{\displaystyle 4} \\
+\sin^2 x & \frac{\displaystyle x}{\displaystyle 2}-\frac{\displaystyle h}{\displaystyle \sin h}.\frac{\displaystyle \sin 2x}{\displaystyle 4} \\
+\hline
+\end{array}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="472" HEIGHT="446" BORDER="0"
+ SRC="img276.gif"
+ ALT="\begin{displaymath}\renewedcommand{arraystretch}{2.5}\begin{array}[t]{\vert r\ve...
+...displaystyle \sin 2x}{\displaystyle 4} \\
+\hline
+\end{array} \end{displaymath}">
+</DIV><P></P>
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<HR>
+<table width="100%" border=0>
+<tr>
+<td align=left>
+
+<A NAME="tex2html122"
+  HREF="node1.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="index2.gif"></A>
+<A NAME="tex2html114"
+  HREF="node3.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev2.gif"></A>
+<A NAME="tex2html120"
+  HREF="index.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up2.gif"></A>
+<A NAME="tex2html124"
+  HREF="node5.html">
+<IMG WIDTH="30" HEIGHT="30" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next2.gif"></A>
+</td>
+<td align=right>
+<a href="mailto:petemoore@worc0260.freeserve.co.uk"><img src="email.gif" border=0 width=56 height=30 alt="email"></a>
+<a href="http://www.worc0260.freeserve.co.uk/petemoore/maths/"><img src="home.gif" border=0 width=26 height=30 alt="home"></a>
+
+</td>
+</tr>
+</table>
+
+<HR>
+</DIV>
+<!--End of Navigation Panel-->
+&copy; <A HREF="mailto:petemoore@worc0260.freeserve.co.uk">Pete Moore<A> April 2001
+
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+</BODY>
+</HTML>
